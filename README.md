@@ -1,15 +1,20 @@
 # kaitaishinsho
 
-This is CIST FUKAMACHI lab repository.
-
 このリポジトリの使い方
 
-- **"テンプレ.md"** をコピーして作りましょう.
-- 今の段階では, Ubuntu22.04(LTS)に標準インストールされているコマンドのみ調べることにしてます.
+1. `git pull`でこのリモートリポジトリをローカルに反映する.
+2. **テンプレ.md** をコピーして該当マークダウンを作る.
+3. 以下に示す流れでリモートにpushする.
+```bash:toCommit
+git add .
+git commit -m "hogehoge"
+git push -u origin main
+```
 
-todo: directory の分け方を決める. (人別や役割別など)
 
-以下調査予定コマンド一覧（2023/12/06）
+- 今(2023/11/30)の段階では, `Ubuntu Desktop 22.04.3 LTS`に標準インストールされているコマンドのみ調べることにしてます.
+
+- 以下調査予定コマンド一覧（2023/12/06）
 
 GET
 HEAD
