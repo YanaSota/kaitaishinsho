@@ -5,11 +5,11 @@
 1. `git pull`でこのリモートリポジトリをローカルに反映する.
 2. **テンプレ.md** をコピーして該当マークダウンを作る.
 3. 以下に示す流れでリモートにpushする.
-```bash:toPushTheMarkdownFile
-git add .
-git commit -m "hogehoge"
-git push -u origin main
-```
+   ```bash:toPushTheMarkdownFile
+   git add .
+   git commit -m "hogehoge"
+   git push -u origin main
+   ```
 
 - 今(2023/11/30)の段階では, `Ubuntu Desktop 22.04.3 LTS`に標準インストールされているコマンドのみ調べることにしてます.
 
