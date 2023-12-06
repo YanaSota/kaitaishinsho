@@ -1,15 +1,21 @@
 # kaitaishinsho
 
-This is CIST FUKAMACHI lab repository.
+このリポジトリの育て方
 
-このリポジトリの使い方
+1. `git pull`でこのリモートリポジトリをローカルに反映する.
+2. **テンプレ.md** をコピーして該当マークダウンを作る.
+3. 以下に示す流れでリモートにpushする.
+   ```bash:toPushTheMarkdownFile
+   git add .
+   git commit -m "hogehoge"
+   git push -u origin main
+   ```
 
-- **"テンプレ.md"** をコピーして作りましょう.
-- 今の段階では, Ubuntu22.04(LTS)に標準インストールされているコマンドのみ調べることにしてます.
+- 今(2023/11/30)の段階では, `Ubuntu Desktop 22.04.3 LTS`に標準インストールされているコマンドのみ調べることにしてます.
 
-todo: directory の分け方を決める. (人別や役割別など)
+- `$ for x in ${PATH//:/ }; do ls -1 $x; done | sort | uniq`の結果を以下に示します.
 
-以下調査予定コマンド一覧（2023/12/06）
+- 以下調査予定コマンド一覧（2023/12/06）
 
 GET
 HEAD
