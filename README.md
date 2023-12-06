@@ -5,16 +5,15 @@
 1. `git pull`でこのリモートリポジトリをローカルに反映する.
 2. **テンプレ.md** をコピーして該当マークダウンを作る.
 3. 以下に示す流れでリモートにpushする.
-```bash:toCommit
+```bash:toPushTheMarkdownFile
 git add .
 git commit -m "hogehoge"
 git push -u origin main
 ```
 
-
 - 今(2023/11/30)の段階では, `Ubuntu Desktop 22.04.3 LTS`に標準インストールされているコマンドのみ調べることにしてます.
 
--`$ for x in ${PATH//:/ }; do ls -1 $x; done | sort | uniq`の結果を以下に示します.
+- `$ for x in ${PATH//:/ }; do ls -1 $x; done | sort | uniq`の結果を以下に示します.
 
 - 以下調査予定コマンド一覧（2023/12/06）
 
