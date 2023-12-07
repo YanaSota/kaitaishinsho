@@ -252,9 +252,9 @@
         ├─unattended-upgr───{unattended-upgr}
         └─upowerd───2*[{upowerd}]
   ```
+ 
+ - **-l** 
 
-- **-l** 
-    
   長い行を表示。デフォルトでは、長い行はディスプレイの幅で切られる。
   
   実行例　[](変更しない)
@@ -500,6 +500,59 @@
   文章説明
 
   実行例 [](変更しない)
+  
+  ```
+  pstree -u
+  ```
+
+
+  実行結果　[](変更しない)
+
+
+  ```
+  systemd─┬─ModemManager───2*[{ModemManager}]
+        ├─agetty
+        ├─containerd───8*[{containerd}]
+        ├─cron
+        ├─dbus-daemon(messagebus)
+        ├─dockerd───9*[{dockerd}]
+        ├─irqbalance───{irqbalance}
+        ├─multipathd───6*[{multipathd}]
+        ├─networkd-dispat
+        ├─packagekitd───2*[{packagekitd}]
+        ├─polkitd───2*[{polkitd}]
+        ├─rsyslogd(syslog)───3*[{rsyslogd}]
+        ├─sh(tomo)───node─┬─node─┬─bash───pstree
+        │                 │      ├─sh───cpuUsage.sh───sleep
+        │                 │      └─11*[{node}]
+        │                 ├─node───12*[{node}]
+        │                 ├─node───15*[{node}]
+        │                 └─10*[{node}]
+        ├─snapd───10*[{snapd}]
+        ├─sshd─┬─sshd───sshd(tomo)───bash
+        │      └─2*[sshd───sshd(tomo)]
+        ├─systemd(tomo)───(sd-pam)
+        ├─systemd-journal
+        ├─systemd-logind
+        ├─systemd-network(systemd-network)
+        ├─systemd-resolve(systemd-resolve)
+        ├─systemd-timesyn(systemd-timesync)───{systemd-timesyn+
+        ├─systemd-udevd
+        ├─tailscaled───10*[{tailscaled}]
+        ├─thermald───{thermald}
+        ├─udisksd───4*[{udisksd}]
+        ├─unattended-upgr───{unattended-upgr}
+        └─upowerd───2*[{upowerd}]
+  ```
+
+
+
+
+- **-u** 
+    
+  ユーザーIDを表示します。
+  
+  実行例　[](変更しない)
   
   ```
   pstree -u
