@@ -1,7 +1,7 @@
 # kaitaishinsho
 
 このリポジトリの育て方
-How to raise this repo up.
+How to raise this up.
 
 1. `git pull`でこのリモートリポジトリをローカルに反映する.
 2. **テンプレ.md** をコピーして該当マークダウンを作る.
