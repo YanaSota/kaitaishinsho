@@ -1,6 +1,6 @@
 [](ファイル名はコマンド名.md)
 ## dmesg
-dmesgとは
+dmesgと
 
 
 
