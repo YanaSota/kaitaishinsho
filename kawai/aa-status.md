@@ -1,11 +1,11 @@
 [](ファイル名はコマンド名.md)
 # aa-status
-AppArmorプロファイルの状態を表示するコマンド。デフォルトでは、--verboseオプションと同じ情報が表示される。
+AppArmor(Linuxのセキュリティプロファイルを結びつけることで、ネットワークアクセスやRaw socketアクセス、ファイルへの読み書き実行などの機能に制限をかけることができるプログラム。例えば、あるプログラムに対して、参照しかしないファイルへの書き込み、利用するはずがないファイルへのアクセス、関係がない別のプログラムの呼び出しを禁止できる。"/etc/apparmor/parser.conf"に記述された通りに制限がかけられる。)の状態を表示するコマンド。デフォルトでは、--verboseオプションと同じ情報が表示される。
 
   実行例 [](変更しない)
   
   ```
-  aa-status
+  sudo aa-status
   ```
 
 
@@ -14,7 +14,73 @@ AppArmorプロファイルの状態を表示するコマンド。デフォルト
 
   ```
   apparmor module is loaded.
-  You do not have enough privilege to read the profile set.
+  49 profiles are loaded.
+  47 profiles are in enforce mode.
+   /snap/snapd/19993/usr/lib/snapd/snap-confine
+   /snap/snapd/19993/usr/lib/snapd/snap-confine//mount-namespace-capture-helper
+   /snap/snapd/20092/usr/lib/snapd/snap-confine
+   /snap/snapd/20092/usr/lib/snapd/snap-confine//mount-namespace-capture-helper
+   /snap/snapd/20290/usr/lib/snapd/snap-confine
+   /snap/snapd/20290/usr/lib/snapd/snap-confine//mount-namespace-capture-helper
+   /usr/bin/evince
+   /usr/bin/evince-previewer
+   /usr/bin/evince-previewer//sanitized_helper
+   /usr/bin/evince-thumbnailer
+   /usr/bin/evince//sanitized_helper
+   /usr/bin/man
+   /usr/lib/NetworkManager/nm-dhcp-client.action
+   /usr/lib/NetworkManager/nm-dhcp-helper
+   /usr/lib/connman/scripts/dhclient-script
+   /usr/lib/cups/backend/cups-pdf
+   /usr/lib/snapd/snap-confine
+   /usr/lib/snapd/snap-confine//mount-namespace-capture-helper
+   /usr/sbin/cups-browsed
+   /usr/sbin/cupsd
+   /usr/sbin/cupsd//third_party
+   /{,usr/}sbin/dhclient
+   docker-default
+   libreoffice-senddoc
+   libreoffice-soffice//gpg
+   libreoffice-xpdfimport
+   lsb_release
+   man_filter
+   man_groff
+   nvidia_modprobe
+   nvidia_modprobe//kmod
+   snap-update-ns.firefox
+   snap-update-ns.snap-store
+   snap-update-ns.snapd-desktop-integration
+   snap.firefox.firefox
+   snap.firefox.geckodriver
+   snap.firefox.hook.configure
+   snap.firefox.hook.connect-plug-host-hunspell
+   snap.firefox.hook.disconnect-plug-host-hunspell
+   snap.firefox.hook.post-refresh
+   snap.snap-store.hook.configure
+   snap.snap-store.snap-store
+   snap.snap-store.ubuntu-software
+   snap.snap-store.ubuntu-software-local-file
+   snap.snapd-desktop-integration.hook.configure
+   snap.snapd-desktop-integration.snapd-desktop-integration
+   tcpdump
+  2 profiles are in complain mode.
+   libreoffice-oosplash
+   libreoffice-soffice
+  0 profiles are in kill mode.
+  0 profiles are in unconfined mode.
+  7 processes have profiles defined.
+  7 processes are in enforce mode.
+   /usr/bin/man (93992)
+   /usr/bin/less (94000) /usr/bin/man
+   /usr/sbin/cups-browsed (94258)
+   /usr/sbin/cupsd (94221)
+   /bin/snap-store (1413) snap.snap-store.ubuntu-software
+   /bin/snapd-desktop-integration (872) snap.snapd-desktop-integration.snapd-desktop-integration
+   /bin/snapd-desktop-integration (1216) snap.snapd-desktop-integration.snapd-desktop-integration
+  0 processes are in complain mode.
+  0 processes are unconfined but have a profile defined.
+  0 processes are in mixed mode.
+  0 processes are in kill mode.
   ```
 
 ### オプション一覧
@@ -27,7 +93,7 @@ AppArmorプロファイルの状態を表示するコマンド。デフォルト
   実行例 [](変更しない)
   
   ```
-  aa-status --enabled
+  sudo aa-status --enabled
   ```
 
 
@@ -44,7 +110,7 @@ AppArmorプロファイルの状態を表示するコマンド。デフォルト
   実行例　[](変更しない)
   
   ```
-  aa-status --profiled
+  sudo aa-status --profiled
   ```
 
 
@@ -52,7 +118,7 @@ AppArmorプロファイルの状態を表示するコマンド。デフォルト
 
 
   ```
-  
+  49
   ```
 - **--enforced**
   
@@ -61,7 +127,7 @@ AppArmorプロファイルの状態を表示するコマンド。デフォルト
   実行例 [](変更しない)
   
   ```
-  aa-status --enforced
+  sudo aa-status --enforced
   ```
 
 
@@ -69,7 +135,7 @@ AppArmorプロファイルの状態を表示するコマンド。デフォルト
 
 
   ```
-  
+  47
   ```
 - **--complaining**
   
@@ -78,7 +144,7 @@ AppArmorプロファイルの状態を表示するコマンド。デフォルト
   実行例 [](変更しない)
   
   ```
-  aa-status --complaining
+  sudo aa-status --complaining
   ```
 
 
@@ -86,7 +152,7 @@ AppArmorプロファイルの状態を表示するコマンド。デフォルト
 
 
   ```
-  
+  2
   ```
 - **--kill**
   
@@ -95,7 +161,7 @@ AppArmorプロファイルの状態を表示するコマンド。デフォルト
   実行例 [](変更しない)
   
   ```
-  aa-status --kill
+  sudo aa-status --kill
   ```
 
 
@@ -103,7 +169,7 @@ AppArmorプロファイルの状態を表示するコマンド。デフォルト
 
 
   ```
-  
+  0
   ```
 - **--special-unconfined**
   
@@ -112,7 +178,7 @@ AppArmorプロファイルの状態を表示するコマンド。デフォルト
   実行例 [](変更しない)
   
   ```
-  aa-status --special-unconfined
+  sudo aa-status --special-unconfined
   ```
 
 
@@ -120,7 +186,7 @@ AppArmorプロファイルの状態を表示するコマンド。デフォルト
 
 
   ```
-  
+  0
   ```
 - **--process-mixed**
   
@@ -129,7 +195,7 @@ AppArmorプロファイルの状態を表示するコマンド。デフォルト
   実行例 [](変更しない)
   
   ```
-  aa-status --process-mixed
+  sudo aa-status --process-mixed
   ```
 
 
@@ -137,7 +203,7 @@ AppArmorプロファイルの状態を表示するコマンド。デフォルト
 
 
   ```
-  
+  0
   ```
 - **--verbose**
   
@@ -146,7 +212,7 @@ AppArmorプロファイルの状態を表示するコマンド。デフォルト
   実行例 [](変更しない)
   
   ```
-  aa-status --verbose
+  sudo aa-status --verbose
   ```
 
 
@@ -155,7 +221,73 @@ AppArmorプロファイルの状態を表示するコマンド。デフォルト
 
   ```
   apparmor module is loaded.
-  You do not have enough privilege to read the profile set.
+  49 profiles are loaded.
+  47 profiles are in enforce mode.
+   /snap/snapd/19993/usr/lib/snapd/snap-confine
+   /snap/snapd/19993/usr/lib/snapd/snap-confine//mount-namespace-capture-helper
+   /snap/snapd/20092/usr/lib/snapd/snap-confine
+   /snap/snapd/20092/usr/lib/snapd/snap-confine//mount-namespace-capture-helper
+   /snap/snapd/20290/usr/lib/snapd/snap-confine
+   /snap/snapd/20290/usr/lib/snapd/snap-confine//mount-namespace-capture-helper
+   /usr/bin/evince
+   /usr/bin/evince-previewer
+   /usr/bin/evince-previewer//sanitized_helper
+   /usr/bin/evince-thumbnailer
+   /usr/bin/evince//sanitized_helper
+   /usr/bin/man
+   /usr/lib/NetworkManager/nm-dhcp-client.action
+   /usr/lib/NetworkManager/nm-dhcp-helper
+   /usr/lib/connman/scripts/dhclient-script
+   /usr/lib/cups/backend/cups-pdf
+   /usr/lib/snapd/snap-confine
+   /usr/lib/snapd/snap-confine//mount-namespace-capture-helper
+   /usr/sbin/cups-browsed
+   /usr/sbin/cupsd
+   /usr/sbin/cupsd//third_party
+   /{,usr/}sbin/dhclient
+   docker-default
+   libreoffice-senddoc
+   libreoffice-soffice//gpg
+   libreoffice-xpdfimport
+   lsb_release
+   man_filter
+   man_groff
+   nvidia_modprobe
+   nvidia_modprobe//kmod
+   snap-update-ns.firefox
+   snap-update-ns.snap-store
+   snap-update-ns.snapd-desktop-integration
+   snap.firefox.firefox
+   snap.firefox.geckodriver
+   snap.firefox.hook.configure
+   snap.firefox.hook.connect-plug-host-hunspell
+   snap.firefox.hook.disconnect-plug-host-hunspell
+   snap.firefox.hook.post-refresh
+   snap.snap-store.hook.configure
+   snap.snap-store.snap-store
+   snap.snap-store.ubuntu-software
+   snap.snap-store.ubuntu-software-local-file
+   snap.snapd-desktop-integration.hook.configure
+   snap.snapd-desktop-integration.snapd-desktop-integration
+   tcpdump
+  2 profiles are in complain mode.
+   libreoffice-oosplash
+   libreoffice-soffice
+  0 profiles are in kill mode.
+  0 profiles are in unconfined mode.
+  7 processes have profiles defined.
+  7 processes are in enforce mode.
+   /usr/bin/man (93992)
+   /usr/bin/less (94000) /usr/bin/man
+   /usr/sbin/cups-browsed (94258)
+   /usr/sbin/cupsd (94221)
+   /bin/snap-store (1413) snap.snap-store.ubuntu-software
+   /bin/snapd-desktop-integration (872) snap.snapd-desktop-integration.snapd-desktop-integration
+   /bin/snapd-desktop-integration (1216) snap.snapd-desktop-integration.snapd-desktop-integration
+  0 processes are in complain mode.
+  0 processes are unconfined but have a profile defined.
+  0 processes are in mixed mode.
+  0 processes are in kill mode.
   ```
 - **--json**
   
@@ -164,7 +296,7 @@ AppArmorプロファイルの状態を表示するコマンド。デフォルト
   実行例 [](変更しない)
   
   ```
-  aa-status --json
+  sudo aa-status --json
   ```
 
 
@@ -172,16 +304,16 @@ AppArmorプロファイルの状態を表示するコマンド。デフォルト
 
 
   ```
-  
+  {"version": "2", "profiles": {"/snap/snapd/19993/usr/lib/snapd/snap-confine": "enforce", "/snap/snapd/19993/usr/lib/snapd/snap-confine//mount-namespace-capture-helper": "enforce", "/snap/snapd/20092/usr/lib/snapd/snap-confine": "enforce", "/snap/snapd/20092/usr/lib/snapd/snap-confine//mount-namespace-capture-helper": "enforce", "/snap/snapd/20290/usr/lib/snapd/snap-confine": "enforce", "/snap/snapd/20290/usr/lib/snapd/snap-confine//mount-namespace-capture-helper": "enforce", "/usr/bin/evince": "enforce", "/usr/bin/evince-previewer": "enforce", "/usr/bin/evince-previewer//sanitized_helper": "enforce", "/usr/bin/evince-thumbnailer": "enforce", "/usr/bin/evince//sanitized_helper": "enforce", "/usr/bin/man": "enforce", "/usr/lib/NetworkManager/nm-dhcp-client.action": "enforce", "/usr/lib/NetworkManager/nm-dhcp-helper": "enforce", "/usr/lib/connman/scripts/dhclient-script": "enforce", "/usr/lib/cups/backend/cups-pdf": "enforce", "/usr/lib/snapd/snap-confine": "enforce", "/usr/lib/snapd/snap-confine//mount-namespace-capture-helper": "enforce", "/usr/sbin/cups-browsed": "enforce", "/usr/sbin/cupsd": "enforce", "/usr/sbin/cupsd//third_party": "enforce", "/{,usr/}sbin/dhclient": "enforce", "docker-default": "enforce", "libreoffice-senddoc": "enforce", "libreoffice-soffice//gpg": "enforce", "libreoffice-xpdfimport": "enforce", "lsb_release": "enforce", "man_filter": "enforce", "man_groff": "enforce", "nvidia_modprobe": "enforce", "nvidia_modprobe//kmod": "enforce", "snap-update-ns.firefox": "enforce", "snap-update-ns.snap-store": "enforce", "snap-update-ns.snapd-desktop-integration": "enforce", "snap.firefox.firefox": "enforce", "snap.firefox.geckodriver": "enforce", "snap.firefox.hook.configure": "enforce", "snap.firefox.hook.connect-plug-host-hunspell": "enforce", "snap.firefox.hook.disconnect-plug-host-hunspell": "enforce", "snap.firefox.hook.post-refresh": "enforce", "snap.snap-store.hook.configure": "enforce", "snap.snap-store.snap-store": "enforce", "snap.snap-store.ubuntu-software": "enforce", "snap.snap-store.ubuntu-software-local-file": "enforce", "snap.snapd-desktop-integration.hook.configure": "enforce", "snap.snapd-desktop-integration.snapd-desktop-integration": "enforce", "tcpdump": "enforce", "libreoffice-oosplash": "complain", "libreoffice-soffice": "complain"}, "processes": {"/bin/snap-store": [{"profile": "snap.snap-store.ubuntu-software", "pid": "1413", "status": "enforce"}], "/bin/snapd-desktop-integration": [{"profile": "snap.snapd-desktop-integration.snapd-desktop-integration", "pid": "872", "status": "enforce"}, {"profile": "snap.snapd-desktop-integration.snapd-desktop-integration", "pid": "1216", "status": "enforce"}], "/usr/bin/less": [{"profile": "/usr/bin/man", "pid": "94000", "status": "enforce"}], "/usr/bin/man": [{"profile": "/usr/bin/man", "pid": "93992", "status": "enforce"}], "/usr/sbin/cups-browsed": [{"profile": "/usr/sbin/cups-browsed", "pid": "94258", "status": "enforce"}], "/usr/sbin/cupsd": [{"profile": "/usr/sbin/cupsd", "pid": "94221", "status": "enforce"}]}}
   ```
 - **--pretty-json**
   
-  AppArmorプロファイルの状態を、人間も読める形式で表示する。
+  AppArmorプロファイルの状態を、人間にも読みやすい形式で表示する。
 
   実行例 [](変更しない)
   
   ```
-  aa-status --pretty-json
+  sudo aa-status --pretty-json
   ```
 
 
@@ -189,5 +321,94 @@ AppArmorプロファイルの状態を表示するコマンド。デフォルト
 
 
   ```
-  
+  {
+        "version":      "2",
+        "profiles":     {
+                "/snap/snapd/19993/usr/lib/snapd/snap-confine": "enforce",
+                "/snap/snapd/19993/usr/lib/snapd/snap-confine//mount-namespace-capture-helper": "enforce",
+                "/snap/snapd/20092/usr/lib/snapd/snap-confine": "enforce",
+                "/snap/snapd/20092/usr/lib/snapd/snap-confine//mount-namespace-capture-helper": "enforce",
+                "/snap/snapd/20290/usr/lib/snapd/snap-confine": "enforce",
+                "/snap/snapd/20290/usr/lib/snapd/snap-confine//mount-namespace-capture-helper": "enforce",
+                "/usr/bin/evince":      "enforce",
+                "/usr/bin/evince-previewer":    "enforce",
+                "/usr/bin/evince-previewer//sanitized_helper":  "enforce",
+                "/usr/bin/evince-thumbnailer":  "enforce",
+                "/usr/bin/evince//sanitized_helper":    "enforce",
+                "/usr/bin/man": "enforce",
+                "/usr/lib/NetworkManager/nm-dhcp-client.action":        "enforce",
+                "/usr/lib/NetworkManager/nm-dhcp-helper":       "enforce",
+                "/usr/lib/connman/scripts/dhclient-script":     "enforce",
+                "/usr/lib/cups/backend/cups-pdf":       "enforce",
+                "/usr/lib/snapd/snap-confine":  "enforce",
+                "/usr/lib/snapd/snap-confine//mount-namespace-capture-helper":  "enforce",
+                "/usr/sbin/cups-browsed":       "enforce",
+                "/usr/sbin/cupsd":      "enforce",
+                "/usr/sbin/cupsd//third_party": "enforce",
+                "/{,usr/}sbin/dhclient":        "enforce",
+                "docker-default":       "enforce",
+                "libreoffice-senddoc":  "enforce",
+                "libreoffice-soffice//gpg":     "enforce",
+                "libreoffice-xpdfimport":       "enforce",
+                "lsb_release":  "enforce",
+                "man_filter":   "enforce",
+                "man_groff":    "enforce",
+                "nvidia_modprobe":      "enforce",
+                "nvidia_modprobe//kmod":        "enforce",
+                "snap-update-ns.firefox":       "enforce",
+                "snap-update-ns.snap-store":    "enforce",
+                "snap-update-ns.snapd-desktop-integration":     "enforce",
+                "snap.firefox.firefox": "enforce",
+                "snap.firefox.geckodriver":     "enforce",
+                "snap.firefox.hook.configure":  "enforce",
+                "snap.firefox.hook.connect-plug-host-hunspell": "enforce",
+                "snap.firefox.hook.disconnect-plug-host-hunspell":      "enforce",
+                "snap.firefox.hook.post-refresh":       "enforce",
+                "snap.snap-store.hook.configure":       "enforce",
+                "snap.snap-store.snap-store":   "enforce",
+                "snap.snap-store.ubuntu-software":      "enforce",
+                "snap.snap-store.ubuntu-software-local-file":   "enforce",
+                "snap.snapd-desktop-integration.hook.configure":        "enforce",
+                "snap.snapd-desktop-integration.snapd-desktop-integration":     "enforce",
+                "tcpdump":      "enforce",
+                "libreoffice-oosplash": "complain",
+                "libreoffice-soffice":  "complain"
+        },
+        "processes":    {
+                "/bin/snap-store":      [{
+                                "profile":      "snap.snap-store.ubuntu-software",
+                                "pid":  "1413",
+                                "status":       "enforce"
+                        }],
+                "/bin/snapd-desktop-integration":       [{
+                                "profile":      "snap.snapd-desktop-integration.snapd-desktop-integration",
+                                "pid":  "872",
+                                "status":       "enforce"
+                        }, {
+                                "profile":      "snap.snapd-desktop-integration.snapd-desktop-integration",
+                                "pid":  "1216",
+                                "status":       "enforce"
+                        }],
+                "/usr/bin/less":        [{
+                                "profile":      "/usr/bin/man",
+                                "pid":  "94000",
+                                "status":       "enforce"
+                        }],
+                "/usr/bin/man": [{
+                                "profile":      "/usr/bin/man",
+                                "pid":  "93992",
+                                "status":       "enforce"
+                        }],
+                "/usr/sbin/cups-browsed":       [{
+                                "profile":      "/usr/sbin/cups-browsed",
+                                "pid":  "94258",
+                                "status":       "enforce"
+                        }],
+                "/usr/sbin/cupsd":      [{
+                                "profile":      "/usr/sbin/cupsd",
+                                "pid":  "94221",
+                                "status":       "enforce"
+                        }]
+        }
+}
   ```
