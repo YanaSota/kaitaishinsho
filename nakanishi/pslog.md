@@ -23,8 +23,7 @@ pslogコマンドは、プロセスの現在の作業ログを報告する。
   pslog (PSmisc) 23.4
   Copyright (C) 2015-2017 Vito Mule'.
   PSmisc comes with ABSOLUTELY NO WARRANTY.
-  This is free software, and you are welcome to redistribute it under
-  the terms of the GNU General Public License.
+  This is free software, and you are welcome to redistribute it underthe terms of the GNU General Public License.
   For more information about these matters, see the files named COPYING.
   ```
 - **オプション** 
