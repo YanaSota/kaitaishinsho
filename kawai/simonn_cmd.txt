@@ -8,7 +8,7 @@ X11
 Xephyr
 Xorg(よくわからん！後回し)
 Xwayland
-ああああああaaaaadsdwdw
+ああああああaaaaadsdwdwaaaasdadsfdfsdf
 aa-enabled
 aa-exec
 aa-features-abi
