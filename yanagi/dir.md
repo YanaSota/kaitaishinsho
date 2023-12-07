@@ -243,6 +243,6 @@
   directory
   directory2
   file1.txt
-  file3.txt
+  file4.txt
   file2.txt
   ```
