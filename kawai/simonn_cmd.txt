@@ -12,10 +12,8 @@ aa-enabled
 aa-exec
 aa-features-abi
 aa-remove-unknown
-aa-status
 aa-teardown(AAしかでてこん！あとまわし)
 -------------------
-accessdb
 aconnect
 acpi_listen
 acpid
