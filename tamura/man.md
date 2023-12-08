@@ -1,7 +1,7 @@
 [](man.md)
 # man
 各種コマンドの manページ(マニュアルページ) を表示するコマンド。
-manページとはほとんどの UNIXライクなOSで初めからインストールされているドキュメントのことで、慣習として各種コマンドの使用例や書式、オプション、戻り値などが記載されている。
+マニュアルページとはほとんどの UNIXライクなOSで初めからインストールされているドキュメントのことで、慣習として各種コマンドの使用例や書式、オプション、戻り値などが記載されている。
 
   実行例 [](変更しない)
   
@@ -9,7 +9,7 @@ manページとはほとんどの UNIXライクなOSで初めからインスト�
   man ls
   ```
 
-  実行結果 (manページ )[](変更しない)
+  実行結果 (マニュアルページ)[](変更しない)
 
   ```
   LS(1)           BSD General Commands Manual           LS(1)
@@ -102,7 +102,7 @@ manページとはほとんどの UNIXライクなOSで初めからインスト�
   man -D ls
   ```
   
-  実行結果 (manページの表示)[](変更しない)
+  実行結果 (マニュアルページの表示)[](変更しない)
   
   ```
   LS(1)           BSD General Commands Manual           LS(1)
@@ -130,7 +130,7 @@ manページとはほとんどの UNIXライクなOSで初めからインスト�
   man --warnings ls
   ```
   
-  実行結果 (manページの表示)[](変更しない)
+  実行結果 (マニュアルページの表示)[](変更しない)
   
   ```
   LS(1)              User Commands              LS(1)
@@ -166,6 +166,178 @@ manページとはほとんどの UNIXライクなOSで初めからインスト�
               do not list implied entries ending with ~
   
   以下、まだまだ続く
+  ```
+- **-f, --whatis** 
+  
+  whatisコマンドと全く同じ。可能であれば、マニュアルページから短い説明を表示する。
+  
+  実行例　[](変更しない)
+  
+  ```
+  man -f ls
+  ```
+  
+  実行結果　[](変更しない)
+  
+  ```
+  ls (1)               - list directory contents
+  LS (6)               - display animations aimed to correct users who accidentally enter LS instead of ls .
+  ```
+
+  オマケ
+
+  実行例　[](変更しない)
+  
+  ```
+  whatis ls
+  ```
+  
+  実行結果　[](変更しない)
+  
+  ```
+  ls (1)               - list directory contents
+  LS (6)               - display animations aimed to correct users who accidentally enter LS instead of ls .
+  ```
+- **-k, --apropos** 
+  
+  aproposと全く同じ。マニュアルのタイトルやインデックス文章内でキーワードを検索し、マッチする場合は短いマニュアルページの説明を表示する。
+  
+  実行例　[](変更しない)
+  
+  ```
+  man -k lists
+  ```
+  
+  実行結果　[](変更しない)
+  
+  ```
+  Algorithm::Diff (3pm) - Compute `intelligent' differences between two files / lists
+  Algorithm::DiffOld (3pm) - Compute `intelligent' differences between two files / lists but use the old (<=0.59) interface.
+  column (1)           - columnate lists
+  figlist (6)          - lists figlet fonts and control files
+  git-rev-list (1)     - Lists commit objects in reverse chronological order
+  Mail::Field::AddrList (3pm) - object representation of e-mail address lists
+  queue (3)            - implementations of linked lists and queues
+  queue (7)            - implementations of linked lists and queues
+  stdarg (3)           - variable argument lists
+  va_arg (3)           - variable argument lists
+  va_copy (3)          - variable argument lists
+  va_end (3)           - variable argument lists
+  va_start (3)         - variable argument lists
+  ```
+
+  オマケ
+
+  実行例　[](変更しない)
+  
+  ```
+  apropos lists
+  ```
+  
+  実行結果　[](変更しない)
+  
+    ```
+  Algorithm::Diff (3pm) - Compute `intelligent' differences between two files / lists
+  Algorithm::DiffOld (3pm) - Compute `intelligent' differences between two files / lists but use the old (<=0.59) interface.
+  column (1)           - columnate lists
+  figlist (6)          - lists figlet fonts and control files
+  git-rev-list (1)     - Lists commit objects in reverse chronological order
+  Mail::Field::AddrList (3pm) - object representation of e-mail address lists
+  queue (3)            - implementations of linked lists and queues
+  queue (7)            - implementations of linked lists and queues
+  stdarg (3)           - variable argument lists
+  va_arg (3)           - variable argument lists
+  va_copy (3)          - variable argument lists
+  va_end (3)           - variable argument lists
+  va_start (3)         - variable argument lists
+  ```
+- **-K, --global-apropos** 
+  
+  すべてのマニュアルページでテキストを検索する。ソースコード内のコメントアウトも検索範囲内となる。総当たりの検索のため時間がかかる可能性がある。検索語は単純な文字列（デフォルト）または、--regexオプションにより正規表現も使用可。
+
+  
+  実行例　[](変更しない)
+  
+  ```
+  man -K cist
+  ```
+  
+  実行結果 (マニュアルページ)[](変更しない)
+  
+  ```
+  GPROF(1)                                                      GNU                                                     GPROF(1)
+
+  NAME
+       gprof - display call graph profile data
+
+  SYNOPSIS
+       gprof [ -[abcDhilLrsTvwxyz] ] [ -[ACeEfFJnNOpPqQRStZ][name] ]
+        [ -I dirs ] [ -d[num] ] [ -k from/to ]
+        [ -m min-count ] [ -R map_file ] [ -t table-length ]
+        [ --[no-]annotated-source[=name] ]
+        [ --[no-]exec-counts[=name] ]
+        [ --[no-]flat-profile[=name] ] [ --[no-]graph[=name] ]
+        [ --[no-]time=name] [ --all-lines ] [ --brief ]
+        [ --debug[=level] ] [ --function-ordering ]
+        [ --file-ordering map_file ] [ --directory-path=dirs ]
+        [ --display-unused-functions ] [ --file-format=name ]
+        [ --file-info ] [ --help ] [ --line ] [ --inline-file-names ]
+        [ --min-count=n ] [ --no-static ] [ --print-path ]
+        [ --separate-files ] [ --static-call-graph ] [ --sum ]
+
+  以下、まだまだ続く
+  ```
+  "q"を入力してマニュアルページを抜けると、次のようになる
+
+  ```
+  user@localhost:~$ man -K cist
+  --Man-- next: gprof(1) [ view (return) | skip (Ctrl-D) | quit (Ctrl-C) ]
+
+  --Man-- next: lastb(1) [ view (return) | skip (Ctrl-D) | quit (Ctrl-C) ]
+  ```
+  enter もしくは return を入力することで検索にヒットした次のコマンドである lastbコマンドのマニュアルページを見ることができる。Ctrl-D でスキップできる。
+  以下同様に続く。
+  ```
+  user@localhost:~$ man -K cist
+  --Man-- next: gprof(1) [ view (return) | skip (Ctrl-D) | quit (Ctrl-C) ]
+
+  --Man-- next: lastb(1) [ view (return) | skip (Ctrl-D) | quit (Ctrl-C) ]
+
+  --Man-- next: last(1) [ view (return) | skip (Ctrl-D) | quit (Ctrl-C) ]
+
+  --Man-- next: killall5(8) [ view (return) | skip (Ctrl-D) | quit (Ctrl-C) ]
+
+  --Man-- next: pidof(8) [ view (return) | skip (Ctrl-D) | quit (Ctrl-C) ]
+  ```
+- **-l, --local-file** 
+  
+  "local"モードを有効にする。システムのマニュアルコレクションを検索する代わりに、ローカルなマニュアルファイルをフォーマットして表示する。catファイルは生成されません。引数の中に '-' が指定されている場合、stdinから入力を受け付けます。このオプションを使用しない場合、manが必要なページを見つけられない場合、エラーメッセージを表示する前に、このオプションが指定されたかのように振る舞い、名前をファイル名として使用して完全一致を検索します。
+  
+  実行例　[](変更しない)
+  
+  ```
+  実行例
+  ```
+  
+  実行結果　[](変更しない)
+  
+  ```
+  実行結果
+  ```
+- **オプション** 
+  
+  文章説明
+  
+  実行例　[](変更しない)
+  
+  ```
+  実行例
+  ```
+  
+  実行結果　[](変更しない)
+  
+  ```
+  実行結果
   ```
 - **オプション** 
   
