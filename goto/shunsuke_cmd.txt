@@ -2,7 +2,7 @@ timedatectl
 timeout
 tipc
 tload
-tnftp
+tnftp(?)
 toe
 top
 touch
