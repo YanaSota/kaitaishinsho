@@ -119,7 +119,7 @@ Perlで書いたtarに似たコマンド。PerlモジュールであるArchive::
   $ ls
   test_1.txt  test_2.txt  test.tar /実行前
 
-  ptar -czf test.tar.gz test_1.txt test_2.txt
+  $ ptar -czf test.tar.gz test_1.txt test_2.txt
 
   $ ls
   test_1.txt  test_2.txt  test.tar  test.tar.gz/実行後
