@@ -18,29 +18,33 @@
 
 
   ```
-  top - 00:51:47 up 2 days, 11:25,  4 users,  load average: 0.06, 0.29, 0.32
+ top - 19:46:21 up 3 days,  6:20,  4 users,  load average: 0.75, 0.43, 0.36
 Tasks: 243 total,   1 running, 242 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.3 us,  0.6 sy,  0.0 ni, 97.2 id,  1.8 wa,  0.0 hi,  0.1 si,  0.0 st
-KiB Mem : 16204116 total,   432652 free,  2848332 used, 12923132 buff/cache
-KiB Swap:  2097148 total,  2094076 free,     3072 used. 12600424 avail Mem
+%Cpu(s):  0.8 us,  0.7 sy,  0.0 ni, 96.2 id,  2.3 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16204116 total,   418872 free,  2862832 used, 12922412 buff/cache
+KiB Swap:  2097148 total,  2094076 free,     3072 used. 12585868 avail Mem
 
     PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-   2208 user  20   0   12.2g 611632 238196 S   2.3   3.8 119:55.15 firefox
-  30332 root      20   0 1388388  49384  19712 S   0.7   0.3  80:36.98 tailscaled
-     60 root       0 -20       0      0      0 I   0.3   0.0   4:28.81 kworker/2:1H-kblockd
-    174 root      20   0       0      0      0 S   0.3   0.0  11:16.61 jbd2/sda2-8
-   2733 user  20   0 2949016 302016 113852 S   0.3   1.9   5:31.80 Isolated Web Co
-   6935 user  20   0 2554736 164940  92504 S   0.3   1.0   1:44.48 Isolated Web Co
-  32841 user  20   0 2599572 173200  94456 S   0.3   1.1  15:23.20 Isolated Web Co
-  47534 systemd+  20   0   14828   6912   6144 S   0.3   0.0   1:52.13 systemd-oomd
-  52487 user  20   0   14272   4096   3328 R   0.3   0.0   0:00.71 top
-      1 root      20   0  166664  11648   8320 S   0.0   0.1   0:13.47 systemd
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.09 kthreadd
+   2208 shunsuke  20   0   12.2g 600384 238248 S   2.7   3.7 158:45.45 firefox
+  33026 shunsuke  20   0 2589236 202292  99788 S   1.3   1.2   7:03.68 Isolated Web Co
+  30332 root      20   0 1388388  48296  19712 S   0.7   0.3  86:50.32 tailscaled
+  32841 shunsuke  20   0 2616980 175496  94456 S   0.7   1.1  20:30.79 Isolated Web Co
+   2942 shunsuke  20   0 2704040 281128  98600 S   0.3   1.7   6:23.49 Isolated Web Co
+  33014 shunsuke  20   0 2668360 167660  93040 S   0.3   1.0  11:43.88 Isolated Web Co
+  47534 systemd+  20   0   14828   6912   6144 S   0.3   0.0   3:50.44 systemd-oomd
+  57499 shunsuke  20   0   14396   4224   3328 R   0.3   0.0   0:00.31 top
+      1 root      20   0  166664  11648   8320 S   0.0   0.1   0:14.75 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.12 kthreadd
       3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp
       4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_par_gp
       5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 slub_flushwq
   ~~プロセスが多いので省略~~
   ```
+  <br>
+  上の結果を見るとFirefoxブラウザ (PID 2208) は、約12.2GBの仮想メモリを使用し、約600MBの物理メモリを消費しており、CPU使用率は2.3%、メモリ使用率は3.8%だということがわかる。
+  <br>
+  <br>
+  
 オプション一覧
 
 
