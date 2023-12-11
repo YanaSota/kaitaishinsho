@@ -1,13 +1,14 @@
 [](ファイル名はコマンド名.md)
-# dnsdomainname
-ドメイン名を表示する
+# domainname
+ネットワーキングやドメイン関連の設定を行う際に使用される
 
-システムの設定やネットワークにより静的に設定されるため使用頻度は低い
+しかし、シンプルな構文と変更の即時変更の観点からhostnameコマンドが推奨される場合が多い
+また、dnsdomainnameとも互換性がある
 
   実行例 [](変更しない)
   
   ```
-  dnssomainname
+  domainname
   ```
 
 
@@ -15,20 +16,23 @@
 
 
   ```
-  表示されない
+  domainname
   ```
 
 
 ### オプション一覧
 
+
+
+
 - **-a**
   
-  ドメインネームの別名も表示する
+  ドメイン名の別名も表示する
 
   実行例 [](変更しない)
   
   ```
-  dnsdomainname -a
+  domainname -a
   ```
 
 
@@ -45,7 +49,7 @@
   実行例　[](変更しない)
   
   ```
-  dnsdomainname -A
+  domainname -A
   ```
 
 
@@ -62,7 +66,7 @@
   実行例　[](変更しない)
   
   ```
-  dnsdomainname -b
+  domainname -b
   ```
 
 
@@ -70,7 +74,7 @@
 
 
   ```
-  表示なし
+  domainname
   ```
 - **-d** 
     
@@ -80,7 +84,7 @@
   実行例　[](変更しない)
   
   ```
-  dnsdomainname -d
+  domainname -d
   ```
 
 
@@ -88,7 +92,7 @@
 
 
   ```
-  表示なし
+  domainname -d
   ```
 - **-f** 
     
@@ -97,7 +101,7 @@
   実行例　[](変更しない)
   
   ```
-  dnsdomainname -f
+  domainname -f
   ```
 
 
@@ -105,7 +109,7 @@
 
 
   ```
-  ubuntu-VitualBox
+  ubuntu-VirtualBox
   ```
 - **-F** 
     
@@ -114,8 +118,8 @@
   実行例　[](変更しない)
   
   ```
-  dnsdomainname -F example.com
-  dnsdomainname
+  sudo domainname -F file.txt
+  domainname
   ```
 
 
@@ -123,7 +127,7 @@
 
 
   ```
-  example.com
+  Hello
   ```
 - **-i** 
     
@@ -133,7 +137,7 @@
   実行例　[](変更しない)
   
   ```
-  dnsdomainname
+  domainname -i
   ```
 
 
@@ -150,7 +154,7 @@
   実行例　[](変更しない)
   
   ```
-  dnsdomainname -I
+  domainname -I
   ```
 
 
@@ -167,7 +171,7 @@
   実行例　[](変更しない)
   
   ```
-  dnsdomainname -s
+  domainname -s
   ```
 
 
@@ -184,7 +188,7 @@
   実行例　[](変更しない)
   
   ```
-  sudo dnsdomainname -y domainname
+  sudo domainname -y domainname1
   domainname
   ```
 
@@ -193,5 +197,5 @@
 
 
   ```
-  domainname
+  domainname1
   ```
