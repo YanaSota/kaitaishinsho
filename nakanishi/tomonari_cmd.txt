@@ -1,12 +1,11 @@
 psicc
 pslog
-pstree
+〇pstree
 pstree.x11
-ptar
+〇ptar
 ptardiff
 ptargrep
-ptx
-pulseaudio
+〇ptx
 pw-cat
 pw-cli
 pw-dot
