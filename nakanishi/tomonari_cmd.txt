@@ -1,10 +1,10 @@
-psicc
-pslog
+psicc(保留)
+pslog(保留)
 〇pstree
-pstree.x11
+pstree.x11(保留)
 〇ptar
-ptardiff
-ptargrep
+ptardiff(保留)
+ptargrep(保留)
 〇ptx
 pw-cat
 pw-cli
