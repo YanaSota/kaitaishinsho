@@ -7,8 +7,6 @@ X
 X11
 Xephyr
 Xorg(よくわからん！後回し)
-Xwayland
-aa-enabled
 aa-exec
 aa-features-abi
 aa-remove-unknown
