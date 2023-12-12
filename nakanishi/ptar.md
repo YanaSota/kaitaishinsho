@@ -52,10 +52,10 @@ Perlで書いたtarに似たコマンド。PerlモジュールであるArchive::
 
 
   ```
-  ls
+  $ls
   test_1.txt  test_2.txt/実行前
   
-  ls
+  $ls
   test_1.txt  test_2.txt  test.tar/実行後
   ```
 - **-t** 
