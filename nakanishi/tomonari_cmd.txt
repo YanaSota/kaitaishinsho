@@ -26,7 +26,7 @@ pw-top
 pw-v4l2
 pwck
 pwconv
-pwd
+〇pwd
 pwdx
 pwunconv
 py3clean
