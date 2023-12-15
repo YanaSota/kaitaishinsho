@@ -24,8 +24,8 @@ pw-record
 pw-reserve
 pw-top
 pw-v4l2
-pwck(レビュー待ち)
-pwconv
+〇pwck
+pwconv(レビュー待ち)
 〇pwd
 pwdx
 pwunconv
