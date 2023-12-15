@@ -27,8 +27,8 @@ pw-v4l2
 〇pwck
 pwconv(レビュー待ち)
 〇pwd
-pwdx
-pwunconv
+pwdx(レビュー待ち)
+pwunconv(レビュー待ち)
 py3clean
 py3compile
 py3versions
