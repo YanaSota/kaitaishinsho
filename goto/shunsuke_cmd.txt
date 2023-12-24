@@ -7,7 +7,7 @@ toe(?)
 top
 touch
 tput
-tr
+tr !
 tracepath
 tracker3
 transicc
