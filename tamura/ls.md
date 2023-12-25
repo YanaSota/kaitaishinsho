@@ -79,28 +79,53 @@ auto_create_md.py  ls.md  man.md  ping.md
   ls -b
   ```
 
-  実行結果 [](変更しない)
+  実行結果 [ls | cat](変更しない)
 
   ```
-  
+  // 比較のために改行をわかりやすくしている
+  auto_create_md.py
+  ls.md
+  man.md
+  one                       // ここが改行されている
+  two.txt
+  ping.md
+  ```
+
+  実行結果 [ls -b](変更しない)
+  ```
+  auto_create_md.py  ls.md  man.md  one\ntwo.txt  ping.md
   ```
 
 - **--block-size=SIZE**
 
-  を -l にすると、印刷時に SIZE でサイズを拡大縮小する；
-                               例：'-block-size=M'; 以下のSIZEフォーマットを参照のこと。
+  `SIZE` の部分を変更することで `-l` オプションを使用したときに確認できる、ファイルのバイトサイズを任意のオーダーで確認できるようになる。確認ができたのは K(k)キロ, M(m)メガ, G(g)ギガ, T(t)テラ の4つの接頭辞のみである。
 
   実行例 [](変更しない)
 
   ```
-  実行例
+  ls -l --block-size=K
   ```
 
-  実行結果 [](変更しない)
+  実行結果 [ls -l](変更しない)
 
   ```
-  実行結果
+  total 36
+  -rw-r--r-- 1 user user  4519 Dec 25 15:10   auto_create_md.py
+  -rw-rw-r-- 1 user user 11692 Dec 25 15:10 ls.md
+  -rw-rw-r-- 1 user user 10558 Dec 11 03:49 man.md
+  -rw-rw-r-- 1 user user  1024 Dec 11 04:23 ping.md
   ```
+
+  実行結果 [ls -l --block-size=K](変更しない)
+  ```
+  total 36K
+  -rw-r--r-- 1 user user  5K Dec 25 15:10 auto_create_md.py
+  -rw-rw-r-- 1 user user 12K Dec 25 15:10 ls.md
+  -rw-rw-r-- 1 user user 11K Dec 11 03:49 man.md
+  -rw-rw-r-- 1 user user  1K Dec 11 04:23 ping.md
+  ```
+
+  上記のように指定したオーダー表記にするために切り上げ処理が施される。
 
 - **-B, --ignore-backups**
 
