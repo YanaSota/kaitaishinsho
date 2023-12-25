@@ -98,7 +98,15 @@ auto_create_md.py  ls.md  man.md  ping.md
 
 - **--block-size=SIZE**
 
-  `SIZE` の部分を変更することで `-l` オプションを使用したときに確認できる、ファイルのバイトサイズを任意のオーダーで確認できるようになる。確認ができたのは K(k)キロ, M(m)メガ, G(g)ギガ, T(t)テラ の4つの接頭辞のみである。
+  `SIZE` の部分を変更することで `-l` オプションを使用したときに確認できる、ファイルのバイトサイズを任意のオーダーで確認できるようになる。
+  引数として利用できるのはSI接頭辞と整数の掛け合わせ(例：10K = 10 * 1024)の形式に限られる。
+  
+  - ここで使えるSI接頭辞は **キロ(K/k)、メガ(M/m)、ギガ(G/g)、テラ(T/t)、ペタ(P/p)、エクサ(E/e)、ゼタ(Z/z)、ヨタ(Y/y)** であり、それぞれそのまま使用すると、2の10乗である 1024 の倍数として利用できる(例：G = 1024 * 1024 * 1024)。
+  
+  - 直後にBをつけることで、10の累乗による概念のSI接頭辞として利用できる(例：G = 10^9)。
+
+  - バイナリ接頭辞も利用することができ、 キロ に相当するのが KiB(キビバイト), メガ に相当するのが MiB(メビバイト) などのように使用できる。
+
 
   実行例 [](変更しない)
 
@@ -129,18 +137,88 @@ auto_create_md.py  ls.md  man.md  ping.md
 
 - **-B, --ignore-backups**
 
-  で終わる暗黙のエントリーをリストしない
+  「~」で終わるファイル(バックアップファイル)を表示しない。
 
   実行例 [](変更しない)
 
   ```
-  実行例
+  ls -B
+  ```
+
+  実行結果 [ls](変更しない)
+
+  ```
+  auto_create_md.py  hoge.txt  hoge.txt~  ls.md  man.md  ping.md
+  ```
+
+  実行結果 [ls -B](変更しない)
+
+  ```
+  auto_create_md.py  hoge.txt  ls.md  man.md  ping.md
+  ```
+
+
+- **-c**
+
+  `-lt` オプションと併用すると、 **ctime** (ファイルステータス情報の最終変更時刻) に基づいてファイルを最新のものからソートして表示する。
+  
+  `-l` オプションと併用すると、**ctime** を含むファイルの詳細情報をファイル名ソートして表示する。
+
+  単独で使用すると、**ctime** でソートして表示する。
+
+  実行例 [](変更しない)
+
+  ```
+  ls -ltc
+  ls -lc
+  ls -c
+  ```
+
+  実行結果 [ls -ltc](変更しない)
+
+  ```
+  // ファイルの最終変更時刻順
+  total 40
+  -rw-rw-r-- 1 user user     9 Dec 26 01:05 hoge.txt
+  -rw-rw-r-- 1 user user 11692 Dec 25 15:10 ls.md
+  -rw-r--r-- 1 user user  4519 Dec 25 15:10 auto_create_md.py
+  -rw-rw-r-- 1 user user  1024 Dec 11 23:42 ping.md
+  -rw-rw-r-- 1 user user 10558 Dec 11 23:42 man.md
+  ```
+
+  実行結果 [ls -lc](変更しない)
+
+  ```
+  // ファイルの名前順
+  total 40
+  -rw-r--r-- 1 shuuto shuuto  4519 Dec 25 15:10 auto_create_md.py
+  -rw-rw-r-- 1 shuuto shuuto     9 Dec 26 01:05 hoge.txt
+  -rw-rw-r-- 1 shuuto shuuto 11692 Dec 25 15:10 ls.md
+  -rw-rw-r-- 1 shuuto shuuto 10558 Dec 11 23:42 man.md
+  -rw-rw-r-- 1 shuuto shuuto  1024 Dec 11 23:42 ping.md
+  ```
+
+  実行結果 [ls -c](変更しない)
+
+  ```
+  // ファイルの最終変更時刻順
+  hoge.txt  ls.md  auto_create_md.py  ping.md  man.md
+  ```
+
+- **-C**
+
+  出力を列にするオプション。
+
+  実行例 [](変更しない)
+
+  ```
+  ls -C
   ```
 
   実行結果 [](変更しない)
 
   ```
-  実行結果
+  なんか全く変わらないんで,消す候補です
   ```
 
 - **--color[=WHEN]**
