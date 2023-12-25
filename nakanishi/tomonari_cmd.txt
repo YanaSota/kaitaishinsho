@@ -30,7 +30,7 @@ pwconv(レビュー待ち)
 〇pwdx
 〇pwunconv
 py3clean
-py3compile
+〇py3compile
 py3versions
 pydoc3
 pydoc3.10
