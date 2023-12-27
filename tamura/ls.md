@@ -3,13 +3,13 @@
 デフォルトでは現在のディレクトリの中にあるファイルに関する情報をリストアップする。
 `-cftuvSUX` または `--sort` のいずれも指定されていない場合は、検索結果をアルファベット順にソートして出力する。
 
-実行例 [](変更しない)
+実行例 []()
 
 ```
 ls
 ```
 
-実行結果 [](変更しない)
+実行結果 []()
 
 ```
 auto_create_md.py  ls.md  man.md  ping.md
@@ -20,13 +20,13 @@ auto_create_md.py  ls.md  man.md  ping.md
 
   . から始まるファイル（ドットファイル）も表示する。
 
-  実行例 [](変更しない)
+  実行例 []()
 
   ```
   ls -a
   ```
 
-  実行結果 [](変更しない)
+  実行結果 []()
 
   ```
   .  ..  .git  auto_create_md.py  ls.md  man.md  ping.md
@@ -36,13 +36,13 @@ auto_create_md.py  ls.md  man.md  ping.md
 
   どこのディレクトリにもあるドットファイルである、「.」および「..」をリストに含めないようにする。
 
-  実行例 [](変更しない)
+  実行例 []()
 
   ```
   ls -A
   ```
 
-  実行結果 [](変更しない)
+  実行結果 []()
 
   ```
   .git  auto_create_md.py  ls.md  man.md  ping.md
@@ -52,13 +52,13 @@ auto_create_md.py  ls.md  man.md  ping.md
 
   `-l` と併用することで各ファイルの作者を表示できる。
 
-  実行例 [](変更しない)
+  実行例 []()
 
   ```
   ls -l --author
   ```
 
-  実行結果 [](変更しない)
+  実行結果 []()
 
   ```
   total 36
@@ -68,143 +68,6 @@ auto_create_md.py  ls.md  man.md  ping.md
   -rw-rw-r-- 1 author user user  1024 Dec 9 04:23 ping.md
   ```
   上の例でわかりやすく `author` としているところに作者のアカウント名が表示される。
-
-- **-b, --escape**
-
-  C言語の形式で非表示文字（エスケープシーケンス）を表示する。
-
-  実行例 [](変更しない)
-
-  ```
-  ls -b
-  ```
-
-  実行結果 [ls | cat](変更しない)
-
-  ```
-  // 比較のために改行をわかりやすくしている
-  auto_create_md.py
-  ls.md
-  man.md
-  one                       // ここが改行されている
-  two.txt
-  ping.md
-  ```
-
-  実行結果 [ls -b](変更しない)
-  ```
-  auto_create_md.py  ls.md  man.md  one\ntwo.txt  ping.md
-  ```
-
-- **--block-size=SIZE**
-
-  `SIZE` の部分を変更することで `-l` オプションを使用したときに確認できる、ファイルのバイトサイズを任意のオーダーで確認できるようになる。
-  引数として利用できるのはSI接頭辞と整数の掛け合わせ(例：10K = 10 * 1024)の形式に限られる。
-  
-  - ここで使えるSI接頭辞は **キロ(K/k)、メガ(M/m)、ギガ(G/g)、テラ(T/t)、ペタ(P/p)、エクサ(E/e)、ゼタ(Z/z)、ヨタ(Y/y)** であり、それぞれそのまま使用すると、2の10乗である 1024 の倍数として利用できる(例：G = 1024 * 1024 * 1024)。
-  
-  - 直後にBをつけることで、10の累乗による概念のSI接頭辞として利用できる(例：G = 10^9)。
-
-  - バイナリ接頭辞も利用することができ、 キロ に相当するのが KiB(キビバイト), メガ に相当するのが MiB(メビバイト) などのように使用できる。
-
-
-  実行例 [](変更しない)
-
-  ```
-  ls -l --block-size=K
-  ```
-
-  実行結果 [ls -l](変更しない)
-
-  ```
-  total 36
-  -rw-r--r-- 1 user user  4519 Dec 25 15:10   auto_create_md.py
-  -rw-rw-r-- 1 user user 11692 Dec 25 15:10 ls.md
-  -rw-rw-r-- 1 user user 10558 Dec 11 03:49 man.md
-  -rw-rw-r-- 1 user user  1024 Dec 11 04:23 ping.md
-  ```
-
-  実行結果 [ls -l --block-size=K](変更しない)
-  ```
-  total 36K
-  -rw-r--r-- 1 user user  5K Dec 25 15:10 auto_create_md.py
-  -rw-rw-r-- 1 user user 12K Dec 25 15:10 ls.md
-  -rw-rw-r-- 1 user user 11K Dec 11 03:49 man.md
-  -rw-rw-r-- 1 user user  1K Dec 11 04:23 ping.md
-  ```
-
-  上記のように指定したオーダー表記にするために切り上げ処理が施される。
-
-- **-B, --ignore-backups**
-
-  「~」で終わるファイル(バックアップファイル)を表示しない。
-
-  実行例 [](変更しない)
-
-  ```
-  ls -B
-  ```
-
-  実行結果 [ls](変更しない)
-
-  ```
-  auto_create_md.py  hoge.txt  hoge.txt~  ls.md  man.md  ping.md
-  ```
-
-  実行結果 [ls -B](変更しない)
-
-  ```
-  auto_create_md.py  hoge.txt  ls.md  man.md  ping.md
-  ```
-
-
-- **-c**
-
-  `-lt` オプションと併用すると、 **ctime** (ファイルステータス情報の最終変更時刻) に基づいてファイルを最新のものからソートして表示する。
-  
-  `-l` オプションと併用すると、**ctime** を含むファイルの詳細情報をファイル名ソートして表示する。
-
-  単独で使用すると、**ctime** でソートして表示する。
-
-  実行例 [](変更しない)
-
-  ```
-  ls -ltc
-  ls -lc
-  ls -c
-  ```
-
-  実行結果 [ls -ltc](変更しない)
-
-  ```
-  // ファイルの最終変更時刻順
-  total 40
-  -rw-rw-r-- 1 user user     9 Dec 26 01:05 hoge.txt
-  -rw-rw-r-- 1 user user 11692 Dec 25 15:10 ls.md
-  -rw-r--r-- 1 user user  4519 Dec 25 15:10 auto_create_md.py
-  -rw-rw-r-- 1 user user  1024 Dec 11 23:42 ping.md
-  -rw-rw-r-- 1 user user 10558 Dec 11 23:42 man.md
-  ```
-
-  実行結果 [ls -lc](変更しない)
-
-  ```
-  // ファイルの名前順
-  total 40
-  -rw-r--r-- 1 user user  4519 Dec 25 15:10 auto_create_md.py
-  -rw-rw-r-- 1 user user     9 Dec 26 01:05 hoge.txt
-  -rw-rw-r-- 1 user user 11692 Dec 25 15:10 ls.md
-  -rw-rw-r-- 1 user user 10558 Dec 11 23:42 man.md
-  -rw-rw-r-- 1 user user  1024 Dec 11 23:42 ping.md
-  ```
-
-  実行結果 [ls -c](変更しない)
-
-  ```
-  // ファイルの最終変更時刻順
-  hoge.txt  ls.md  auto_create_md.py  ping.md  man.md
-  ```
-
 
 - **--color[=WHEN]**
 
@@ -217,13 +80,13 @@ auto_create_md.py  ls.md  man.md  ping.md
   - `never` : 色がつかない。
 
 
-  実行例 [](変更しない)
+  実行例 []()
 
   ```
   ls --colors=never
   ```
 
-  実行結果 [ls --colors=never](変更しない)
+  実行結果 [ls --colors=never]()
 
   ```
   auto_create_md.py  ls.md  man.md  ping.md
@@ -235,13 +98,13 @@ auto_create_md.py  ls.md  man.md  ping.md
 
   ソートせず、`-aU` オプションを有効にし、`-ls` `--color` オプションを無効にした出力をするオプション。つまり、詳細情報ではない隠しファイルをふくむすべてのファイルを見つけた順で色なしで表示するオプション。
 
-  実行例 [](変更しない)
+  実行例 []()
 
   ```
   ls -f
   ```
 
-  実行結果 [ls -f](変更しない)
+  実行結果 [ls -f]()
 
   ```
   ..  .  man.md  create_hoge_files.sh  ls.md  auto_create_md.py  ping.md
@@ -262,13 +125,13 @@ auto_create_md.py  ls.md  man.md  ping.md
   - `verbose`(=`-l`オプション) : 詳細情報まで出力する。
   - `vertical`(=`-C`オプション) : 詳細情報まで出力する。
 
-  実行例 [](変更しない)
+  実行例 []()
 
   ```
   ls --format=across
   ```
 
-  実行結果 [](変更しない)
+  実行結果 []()
 
   ```
   各コマンドの出力先を参照。
@@ -280,398 +143,237 @@ auto_create_md.py  ls.md  man.md  ping.md
 
 - **--group-directories-first**
 
-  ディレクトリをファイルの前にグループ化する；
-                               は、-sortオプションで追加できるが、-sort=none (-U)を使用すると、グループ化が無効になる。
-                               -sort=none（-U）を使用すると、グループ化が無効になる。
+  ディレクトリをファイルより先に表示するオプション。
+  `--sort` オプションと組み合わせて使用することもできるが、`--sort=none` もしくは `-U` と併用してしまうと先にディレクトリが表示されないようになってしまう。
 
-  実行例 [](変更しない)
-
-  ```
-  実行例
-  ```
-
-  実行結果 [](変更しない)
+  実行例 []()
 
   ```
-  実行結果
+  ls --group-directories-first
   ```
 
-- **-G, --no-group**
-
-  長いリストでは、グループ名を印刷しない
-
-  実行例 [](変更しない)
+  実行結果 [ls]()
 
   ```
-  実行例
+  // dir = ディレクトリ
+  auto_create_md.py  create_hoge_files.sh  dir  ls.md  man.md  ping.md
   ```
 
-  実行結果 [](変更しない)
+  実行結果 [ls --group-directories-first]()
 
   ```
-  実行結果
-  ```
-
-- **-h, --human-readable**
-
-  lと-sで、1K 234M 2Gなどのサイズを印刷する。
-
-  実行例 [](変更しない)
-
-  ```
-  実行例
-  ```
-
-  実行結果 [](変更しない)
-
-  ```
-  実行結果
-  ```
-
-- **--si**
-
-  同様に、1024ではなく1000の累乗を使用する。
-
-  実行例 [](変更しない)
-
-  ```
-  実行例
-  ```
-
-  実行結果 [](変更しない)
-
-  ```
-  実行結果
-  ```
-
-- **-H, --dereference-command-line**
-
-  コマンドラインに記載されているシンボリックリンクをたどる
-
-  実行例 [](変更しない)
-
-  ```
-  実行例
-  ```
-
-  実行結果 [](変更しない)
-
-  ```
-  実行結果
-  ```
-
-- **--dereference-command-line-symlink-to-dir**
-
-  コマンドラインのシンボリックリンク
-                               ディレクトリを指す
-
-  実行例 [](変更しない)
-
-  ```
-  実行例
-  ```
-
-  実行結果 [](変更しない)
-
-  ```
-  実行結果
+  // dir = ディレクトリ
+  dir  auto_create_md.py  create_hoge_files.sh  ls.md  man.md  ping.md
   ```
 
 - **--hide=PATTERN**
 
-  シェル PATTERN にマッチする暗黙のエントリをリストしない。
-                               (で上書きされる）。
+  シェルで利用できる正規表現を引数( `=PATTERN` )に渡すことで指定した正規表現にマッチするファイル名を表示しないで出力するオプション。`-a` オプションなどとの併用ではマッチしたものも表示されてしまう。
 
-  実行例 [](変更しない)
-
-  ```
-  実行例
-  ```
-
-  実行結果 [](変更しない)
+  実行例 []()
 
   ```
-  実行結果
+  ls --hide='*.md'
   ```
 
-- **--hyperlink[=WHEN]**
-
-  ハイパーリンクファイル名。
-                               (省略時のデフォルト）、'auto'、または'never'です。
-
-  実行例 [](変更しない)
+  実行結果 [ls]()
 
   ```
-  実行例
+  auto_create_md.py  create_hoge_files.sh  dir  ls.md  man.md  ping.md
   ```
 
-  実行結果 [](変更しない)
+  実行結果 [ls --hide='*.md']()
 
   ```
-  実行結果
+  auto_create_md.py  create_hoge_files.sh  dir
   ```
 
-- **--indicator-style=WORD**
+- **-l**
 
-  スタイル WORD を持つインジケータをエントリ名に追加する：
-                               none（デフォルト）、スラッシュ（-p）、
-                               ファイルタイプ (-file-type)、classify (-F)
+  ファイル(ディレクトリ)の詳細情報を表示するオプション。
 
-  実行例 [](変更しない)
+  `total` にはディレクトリ内のすべてのファイルの \**ブロック* 数の合計が出力される。
+  
+  （\* ブロック : ディスク上の容量のひとまとまりの単位のこと。通常1ブロックは 512 もしくは 1024バイト）
+  
+  左から、ファイル(ディレクトリ)のパーミッション、そのファイルに対する \**ハードリンク* の数、ファイルの所有者、所属グループ、ファイルサイズ、最終変更時刻、ファイル(ディレクトリ)名が表示される。
+  
+  (\* ハードリンク : 同一のファイルに対する別名のこと。ハードリンク同士で同じデータブロックを共有するため、どちらかの変更が他方にも反映される。)
 
-  ```
-  実行例
-  ```
-
-  実行結果 [](変更しない)
-
-  ```
-  実行結果
-  ```
-
-- **-i, --inode**
-
-  各ファイルのインデックス番号を表示する。
-
-  実行例 [](変更しない)
+  実行例 []()
 
   ```
-  実行例
+  ls -l
   ```
 
-  実行結果 [](変更しない)
+  実行結果 []()
 
   ```
-  実行結果
-  ```
-
-- **-I, --ignore=PATTERN**
-
-  シェルPATTERNに一致する暗黙のエントリをリストしない
-
-  実行例 [](変更しない)
-
-  ```
-  実行例
-  ```
-
-  実行結果 [](変更しない)
-
-  ```
-  実行結果
-  ```
-
-- **-k, --kibibytes**
-
-  ディスク使用量のデフォルトは1024バイトブロック；
-                               sとディレクトリごとの合計でのみ使用
-
-  実行例 [](変更しない)
-
-  ```
-  実行例
-  ```
-
-  実行結果 [](変更しない)
-
-  ```
-  実行結果
-  ```
-
-- **-L, --dereference**
-
-  シンボリック
-                               シンボリックリンクのファイル情報を表示する場合は、リンク
-                               の情報を表示します。
-
-  実行例 [](変更しない)
-
-  ```
-  実行例
-  ```
-
-  実行結果 [](変更しない)
-
-  ```
-  実行結果
-  ```
-
-- **-n, --numeric-uid-gid**
-
-  lのように、数値のユーザーIDとグループIDをリストアップする。
-
-  実行例 [](変更しない)
-
-  ```
-  実行例
-  ```
-
-  実行結果 [](変更しない)
-
-  ```
-  実行結果
-  ```
-
-- **-N, --literal**
-
-  引用符を付けずにエントリー名を印刷する
-
-  実行例 [](変更しない)
-
-  ```
-  実行例
-  ```
-
-  実行結果 [](変更しない)
-
-  ```
-  実行結果
+  total 44
+  -rw-r--r-- 1 user user  4519 Dec 25 15:10 auto_create_md.py
+  -rwxrwxr-x 1 user user    63 Dec 26 01:27 create_hoge_files.sh
+  drwxrwxr-x 2 user user  4096 Dec 28 00:20 dir
+  -rw-rw-r-- 1 user user 11692 Dec 25 15:10 ls.md
+  -rw-rw-r-- 1 user user 10558 Dec 11 03:49 man.md
+  -rw-rw-r-- 1 user user  1024 Dec 11 04:23 ping.md
   ```
 
 - **-p, --indicator-style=slash**
 
-  ディレクトリへの追加/インジケータ
+  ディレクトリ名の末尾に `/` が追加されて表示されるオプション。
 
-  実行例 [](変更しない)
-
-  ```
-  実行例
-  ```
-
-  実行結果 [](変更しない)
+  実行例 []()
 
   ```
-  実行結果
+  ls -p
   ```
 
-- **-q, --hide-control-chars**
-
-  非図形文字の代わりに ?
-
-  実行例 [](変更しない)
+  実行結果 []()
 
   ```
-  実行例
-  ```
-
-  実行結果 [](変更しない)
-
-  ```
-  実行結果
-  ```
-
-- **--show-control-chars**
-
-  グラフィック以外の文字をそのまま表示する（デフォルト、
-                               プログラムが'ls'で出力がターミナルでない限り)
-
-  実行例 [](変更しない)
-
-  ```
-  実行例
-  ```
-
-  実行結果 [](変更しない)
-
-  ```
-  実行結果
+  // dir は ディレクトリ
+  auto_create_md.py  create_hoge_files.sh  dir/  ls.md  man.md  ping.md
   ```
 
 - **-Q, --quote-name**
 
-  エントリー名を二重引用符で囲む
+  表示されるファイル(ディレクトリ)名がダブルクォーテーションで囲まれて出力されるオプション。
+  ファイル(ディレクトリ)名にスペースや特殊文字が含まれているときに使用することが多い。
 
-  実行例 [](変更しない)
-
-  ```
-  実行例
-  ```
-
-  実行結果 [](変更しない)
+  実行例 []()
 
   ```
-  実行結果
+  ls -Q
   ```
 
-- **--quoting-style=WORD**
-
-  エントリー名にはWORDスタイルを使用する：
-                               literal、locale、shell、shell-always、
-                               シェルエスケープ、シェルエスケープ常時、c、エスケープ
-                               (環境変数QUOTING_STYLEを上書きする)
-
-  実行例 [](変更しない)
+  実行結果 [ls]()
 
   ```
-  実行例
+   auto_create_md.py      dir     man.md               ping.md
+  create_hoge_files.sh   ls.md  'one'$'\n''two.txt'
   ```
 
-  実行結果 [](変更しない)
+  実行結果 [ls -Q]()
 
   ```
-  実行結果
+  "auto_create_md.py"     "dir"    "man.md"        "ping.md"
+  "create_hoge_files.sh"  "ls.md"  "one\ntwo.txt"
   ```
 
 - **-r, --reverse**
 
-  ソート中の逆順
+  ファイル(ディレクトリ)のソートの順番を逆にするオプション。
 
-  実行例 [](変更しない)
-
-  ```
-  実行例
-  ```
-
-  実行結果 [](変更しない)
+  実行例 []()
 
   ```
-  実行結果
+  ls -r
+  ```
+
+  実行結果 [ls]()
+
+  ```
+   auto_create_md.py      dir     man.md               ping.mdcreate_hoge_files.sh   ls.md  'one'$'\n''two.txt'
+  ```
+
+  実行結果 [ls -r]()
+
+  ```
+  ping.md              man.md   dir                    auto_create_md.py
+  'one'$'\n''two.txt'   ls.md    create_hoge_files.sh
   ```
 
 - **-R, --recursive**
 
-  サブディレクトリを再帰的にリストアップする
+  \**サブディレクトリ* の中身まで再帰的に表示するオプション。
 
-  実行例 [](変更しない)
+  (\* サブディレクトリ : 現在のディレクトリの下に存在するディレクトリのこと)
 
-  ```
-  実行例
-  ```
-
-  実行結果 [](変更しない)
+  実行例 []()
 
   ```
-  実行結果
+  ls -R
   ```
 
-- **-s, --size**
-
-  各ファイルの割り当てサイズをブロック単位で表示する。
-
-  実行例 [](変更しない)
+  実行結果 []()
 
   ```
-  実行例
+  // dir ディレクトリの中
+  user@localhost:~/dir$ ls
+  hoge-hoge.txt
   ```
 
-  実行結果 [](変更しない)
+  実行結果 []()
 
   ```
-  実行結果
+  // dirディレクトリの上の階層のディレクトリの中
+  user@localhost:~$ ls -R
+  .:
+  auto_create_md.py      dir     man.md               ping.md
+  create_hoge_files.sh   ls.md  'one'$'\n''two.txt'
+
+  ./dir:
+  hoge-hoge.txt
   ```
+
+  上記例では \**カレントディレクトリ* は `.` として表示されている。
+
+  (\* カレントディレクトリ : 現在のディレクトリのこと)
+
+- **-S**
+
+  ファイルサイズの大きい順にソートして表示されるオプション。
+
+  実行例 []()
+
+  ```
+  ls -S
+  ```
+
+  実行結果 [ls -l]()
+
+  ```
+  total 52
+  drwxrwxr-x  3 user user  4096 Dec 28 01:52  ./
+  drwxr-x--- 15 user user  4096 Dec 26 03:48  ../
+  -rw-r--r--  1 user user  4519 Dec 25 15:10  auto_create_md.py
+  -rwxrwxr-x  1 user user    63 Dec 26 01:27  create_hoge_files.sh*
+  drwxrwxr-x  2 user user  4096 Dec 28 02:11  dir/
+  -rw-rw-r--  1 user user 11692 Dec 25 15:10  ls.md
+  -rw-rw-r--  1 user user 10558 Dec 11 03:49  man.md
+  -rw-rw-r--  1 user user     0 Dec 28 01:52 'one'$'\n''two.txt'
+  -rw-rw-r--  1 user user  1024 Dec 11 04:23  ping.md
+  ```
+
+  実行結果 [ls -Sx]()
+
+  ```
+  // 横でソートされているのを確認するために
+  // ls -Sx としている
+
+  ls.md                  man.md               auto_create_md.py   dir   ping.md
+  create_hoge_files.sh  'one'$'\n''two.txt'
+  ```
+
+  上記の `ls -l` の例から `ls.md`, `man.md`, `auto_create_md.py`, ... の順にファイルサイズが大きいことが確認でき、`ls -Sx` の例からその順でソートされて出力されていることが確認できる。
 
 - **--sort=WORD**
 
-  名前の代わりに WORD でソート：none (-U)、size (-S)、
-                               時間 (-t)、バージョン (-v)、拡張子 (-X)
+  出力を引数( `=WORD` )にて指定した方法でソートするオプション。`WORD` には以下の単語を指定できる。
 
-  実行例 [](変更しない)
+  - `none` (= `-U`オプション) : ソートしない。ファイルが見つかった順。
+  - `size` (= `-S`オプション) : ファイルサイズが大きい順。
+  - `time` (= `-t`オプション) : 更新時刻順。
+  - `versino` (= `-v`オプション) : バージョン番号順。
+  - `extension` (= `-X`オプション) : 拡張子順。
+
+  実行例 []()
 
   ```
   実行例
   ```
 
-  実行結果 [](変更しない)
+  実行結果 []()
 
   ```
   実行結果
@@ -686,13 +388,13 @@ auto_create_md.py  ls.md  man.md  ping.md
                              lで、WORDが表示する時間を決定する；
                              -sort=timeで、WORDでソート（新しいものから）。
 
-  実行例 [](変更しない)
+  実行例 []()
 
   ```
   実行例
   ```
 
-  実行結果 [](変更しない)
+  実行結果 []()
 
   ```
   実行結果
@@ -702,13 +404,13 @@ auto_create_md.py  ls.md  man.md  ping.md
 
   lを使った時間／日付フォーマット。
 
-  実行例 [](変更しない)
+  実行例 []()
 
   ```
   実行例
   ```
 
-  実行結果 [](変更しない)
+  実行結果 []()
 
   ```
   実行結果
@@ -718,13 +420,13 @@ auto_create_md.py  ls.md  man.md  ping.md
 
   各COLSでタブストップが8つではなく、8つとする。
 
-  実行例 [](変更しない)
+  実行例 []()
 
   ```
   実行例
   ```
 
-  実行結果 [](変更しない)
+  実行結果 []()
 
   ```
   実行結果
@@ -734,13 +436,13 @@ auto_create_md.py  ls.md  man.md  ping.md
 
   出力幅を COLS に設定する。  0は制限なし
 
-  実行例 [](変更しない)
+  実行例 []()
 
   ```
   実行例
   ```
 
-  実行結果 [](変更しない)
+  実行結果 []()
 
   ```
   実行結果
@@ -750,13 +452,13 @@ auto_create_md.py  ls.md  man.md  ping.md
 
   各ファイルのセキュリティコンテキストを表示する
 
-  実行例 [](変更しない)
+  実行例 []()
 
   ```
   実行例
   ```
 
-  実行結果 [](変更しない)
+  実行結果 []()
 
   ```
   実行結果
@@ -766,13 +468,13 @@ auto_create_md.py  ls.md  man.md  ping.md
 
   バージョン情報を出力して終了する
 
-  実行例 [](変更しない)
+  実行例 []()
 
   ```
   実行例
   ```
 
-  実行結果 [](変更しない)
+  実行結果 []()
 
   ```
   実行結果
