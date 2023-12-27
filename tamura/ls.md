@@ -370,112 +370,230 @@ auto_create_md.py  ls.md  man.md  ping.md
   実行例 []()
 
   ```
-  実行例
+  ls --sort=none
   ```
 
-  実行結果 []()
+  実行結果 [ls -l]()
 
   ```
-  実行結果
+  total 44
+  -rw-r--r-- 1 user user  4519 Dec 25 15:10  auto_create_md.py
+  -rwxrwxr-x 1 user user    63 Dec 26 01:27  create_hoge_files.sh
+  drwxrwxr-x 2 user user  4096 Dec 28 02:11  dir
+  -rw-rw-r-- 1 user user 11692 Dec 25 15:10  ls.md
+  -rw-rw-r-- 1 user user 10558 Dec 11 03:49  man.md
+  -rw-rw-r-- 1 user user     0 Dec 28 01:52 'one'$'\n''two.txt'
+  -rw-rw-r-- 1 user user  1024 Dec 11 04:23  ping.md
   ```
 
-- **--time=WORD**
+  以下のソートではソートの結果を行で確認するため、`-x` オプションを使用している。
 
-  修正時間を使うデフォルトを変更する；
-                               アクセス時間（-u）：atime、access、use；
-                               変更時間 (-c): ctime, status；
-                               誕生時間：誕生、作成；
-                             lで、WORDが表示する時間を決定する；
-                             -sort=timeで、WORDでソート（新しいものから）。
+  実行結果 [ls -x --sort=none]()
+
+  ```
+   dir     man.md              create_hoge_files.sh  'one'$'\n''two.txt'
+   ls.md   auto_create_md.py   ping.md
+  ```
+
+  実行結果 [ls -x --sort=size]()
+
+  ```
+   ls.md                  man.md               auto_create_md.py   dir   ping.md
+   create_hoge_files.sh  'one'$'\n''two.txt'
+  ```
+
+  実行結果 [ls -x --sort=time]()
+
+  ```
+   dir                'one'$'\n''two.txt'   create_hoge_files.sh   ls.md
+   auto_create_md.py   ping.md              man.md
+  ```
+
+  実行結果 [ls -x --sort=version]()
+
+  ```
+   auto_create_md.py    create_hoge_files.sh   dir   ls.md   man.md
+   'one'$'\n''two.txt'   ping.md
+  ```
+
+  実行結果 [ls -x --sort=extension]()
+
+  ```
+   dir                    ls.md                man.md   ping.md   auto_create_md.py
+   create_hoge_files.sh  'one'$'\n''two.txt'
+  ```
+
+- **-u**
+
+  ファイル (ディレクトリ) のアクセス時刻 (atime) に基づいてソートする際の動作を指定するオプション。
+  しばしば、`-lt` オプションや `-l` オプションなどと併用される。
+
+    - `-lt` オプションと併用 : ファイルの詳細情報がアクセス時刻 (atime) が新しい順で表示される。
+    - `-l` オプションと併用 : ファイルの詳細情報がファイル名のアルファベット順でアクセス時刻 (atime) とともに表示される。
 
   実行例 []()
 
   ```
-  実行例
+  ls -ltu
+  ls -lu
   ```
 
-  実行結果 []()
+  実行結果 [ls -ltu]()
 
   ```
-  実行結果
+  total 44
+  drwxrwxr-x 2 user user  4096 Dec 28 02:11  dir
+  -rw-rw-r-- 1 user user     0 Dec 28 01:52 'one'$'\n''two.txt'
+  -rw-rw-r-- 1 user user 11692 Dec 27 22:45  ls.md
+  -rwxrwxr-x 1 user user    63 Dec 26 01:27  create_hoge_files.sh
+  -rw-r--r-- 1 user user  4519 Dec 25 15:10  auto_create_md.py
+  -rw-rw-r-- 1 user user 10558 Dec 11 23:42  man.md
+  -rw-rw-r-- 1 user user  1024 Dec 11 04:23  ping.md
   ```
 
-- **--time-style=TIME_STYLE**
+  実行結果 [ls -lu]()
 
-  lを使った時間／日付フォーマット。
+  ```
+  total 44
+  -rw-r--r-- 1 user user  4519 Dec 25 15:10  auto_create_md.py
+  -rwxrwxr-x 1 user user    63 Dec 26 01:27  create_hoge_files.sh
+  drwxrwxr-x 2 user user  4096 Dec 28 02:11  dir
+  -rw-rw-r-- 1 user user 11692 Dec 27 22:45  ls.md
+  -rw-rw-r-- 1 user user 10558 Dec 11 23:42  man.md
+  -rw-rw-r-- 1 user user     0 Dec 28 01:52 'one'$'\n''two.txt'
+  -rw-rw-r-- 1 user user  1024 Dec 11 04:23  ping.md
+  ```
+
+- **-U**
+
+  ファイル (ディレクトリ) 名をソートせずに表示するオプション。
 
   実行例 []()
-
   ```
-  実行例
-  ```
-
-  実行結果 []()
-
-  ```
-  実行結果
+  ls -U
   ```
 
-- **-T, --tabsize=COLS**
+  実行結果 [ls]()
+  ```
+   auto_create_md.py      dir     man.md               ping.md
+   create_hoge_files.sh   ls.md  'one'$'\n''two.txt'
+  ```
 
-  各COLSでタブストップが8つではなく、8つとする。
+  実行結果 [ls -U]()
+  ```
+   dir      create_hoge_files.sh   ls.md               ping.md
+   man.md  'one'$'\n''two.txt'     auto_create_md.py
+  ```
+
+- **-v**
+
+  ファイル (ディレクトリ) 名の数字が自然な順序で表示するオプション。
 
   実行例 []()
+  ```
+  ls -v
+  ```
 
+  実行結果 [ls -x]()
   ```
-  実行例
+   auto_create_md.py    create_hoge_files.sh   dir   hoge10.txt   hoge1.txt   hoge2.txt   ls.md   man.md
+   'one'$'\n''two.txt'   ping.md
   ```
 
-  実行結果 []()
+  実行結果 [ls -xv]()
+  ```
+   auto_create_md.py    create_hoge_files.sh   dir   hoge1.txt   hoge2.txt   hoge10.txt   ls.md   man.md
+  'one'$'\n''two.txt'   ping.md
+  ```
 
-  ```
-  実行結果
-  ```
+  上記例からこのオプションを使用すると、`hoge10.txt` の位置が `hoge2.txt` の後に来ることがわかる。
 
 - **-w, --width=COLS**
 
-  出力幅を COLS に設定する。  0は制限なし
+  出力幅 (横の文字数) を引数( `COLS` )にて指定できるオプション。`0` を渡すと、制限なしと解釈される。
 
   実行例 []()
 
   ```
-  実行例
+  ls -w 50
+  もしくは
+  ls --width=50
   ```
 
   実行結果 []()
 
   ```
-  実行結果
+   auto_create_md.py      hoge2.txt
+   create_hoge_files.sh   ls.md
+   dir                    man.md
+   hoge10.txt            'one'$'\n''two.txt'
+   hoge1.txt              ping.md
   ```
 
-- **-Z, --context**
+- **-x**
 
-  各ファイルのセキュリティコンテキストを表示する
+  ファイル (ディレクトリ) 名を行ごとに表示するオプション。
 
   実行例 []()
 
   ```
-  実行例
+  ls -x
+  ```
+
+  実行結果 [ls]()
+
+  ```
+   auto_create_md.py      dir          hoge1.txt   ls.md   'one'$'\n''two.txt'
+   create_hoge_files.sh   hoge10.txt   hoge2.txt   man.md   ping.md
+  ```
+
+  実行結果 [ls -x]()
+
+  ```
+   auto_create_md.py   create_hoge_files.sh   dir      hoge10.txt           hoge1.txt
+   hoge2.txt           ls.md                  man.md  'one'$'\n''two.txt'   ping.md
+  ```
+
+- **-X**
+
+  ファイルの拡張子のアルファベット順でソートして表示するオプション。
+
+  実行例 []()
+
+  ```
+  ls -X
+  ```
+
+  実行結果 [ls -xX]()
+
+  ```
+  // 容易のため ls -xX で実行
+
+   dir                    ls.md        man.md      ping.md     auto_create_md.py
+   create_hoge_files.sh   hoge10.txt   hoge1.txt   hoge2.txt  'one'$'\n''two.txt'
+  ```
+
+- **-1**
+
+  1行に1ファイル (ディレクトリ) のみ表示するオプション。
+
+  実行例 []()
+
+  ```
+  ls -1
   ```
 
   実行結果 []()
 
   ```
-  実行結果
-  ```
-
-
-
-  バージョン情報を出力して終了する
-
-  実行例 []()
-
-  ```
-  実行例
-  ```
-
-  実行結果 []()
-
-  ```
-  実行結果
+  auto_create_md.py
+  create_hoge_files.sh
+  dir
+  hoge10.txt
+  hoge1.txt
+  hoge2.txt
+  ls.md
+  man.md
+  'one'$'\n''two.txt'
+  ping.md
   ```
