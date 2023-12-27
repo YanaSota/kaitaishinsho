@@ -32,7 +32,7 @@ pwconv(レビュー待ち)
 py3clean
 〇py3compile
 py3versions
-pydoc3
+pydoc3(レビュー待ち)
 pydoc3.10
 pygettext3
 pygettext3.10
