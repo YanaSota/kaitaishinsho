@@ -81,7 +81,7 @@ DATA：モジュール内で使用されている定数の表示
 
 - **-w**
   
-  指定したモジュールのドキュメントを、HTMLドキュメントとして現在にいるディレクトリに作成する。
+  指定したモジュールのドキュメントを、HTMLドキュメントとして現在いるディレクトリに作成する。
 
   実行例 [](変更しない)
   
@@ -192,5 +192,5 @@ DATA：モジュール内で使用されている定数の表示
   numpy.lib.scimath - Wrapper functions to more user-friendly calling of certain math functions
   numpy.linalg._umath_linalg
   ```
-  上の例では、キーワード「math」に関するモジュールの検索結果である。
-  "cmath"、"math"、"numpy"などのモジュールが表示されている。
+  上の例では、キーワード「math」を含んでいるモジュールの検索を行っている。
+  実行結果から"cmath"、"math"、"numpy"などのモジュールが表示されている。
