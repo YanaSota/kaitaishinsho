@@ -100,7 +100,14 @@ $ diff file1.txt file2.txt
   実行結果 [](変更しない)
 
   ```
-  Files file1.txt and file2.txt differ
+  $ cat file1.txt
+      hello,world!!
+      I am Linux.
+  $ cat file2.txt
+      hello,world!!
+      I am Windows10.
+  $ diff file1.txt file2.txt -q
+      Files file1.txt and file2.txt differ
   ```
 
 - **-i, --ignore-case**
@@ -179,7 +186,7 @@ $ diff file1.txt file2.txt
 
 - **-s, --report-identical-files**
 
-  ファイルが同一の場合、同一であると表示する。
+  ファイルの中身が全く同一の場合、同一であると表示する。そのため改行などやスペースの数なども比較の対象となる。
 
   実行例 [](変更しない)
 
@@ -190,7 +197,14 @@ $ diff file1.txt file2.txt
   実行結果 [](変更しない)
 
   ```
-  Files identical1.txt and identical2.txt are identical
+  $diff identical1.txt identical2.txt -s
+    Files identical1.txt and identical2.txt are identical
+  $diff identical1.txt identical3.txt -s (identical3.txtは改行のみ追加したもの)
+    1c1
+    < hello!
+    \ No newline at end of file
+    ---
+    > hello! 
   ```
 
 - **-u, -U NUM, --unified[=NUM]**
