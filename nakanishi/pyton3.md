@@ -5,7 +5,7 @@ pythonのプログラムを動かすためのコマンド
   実行例 [](変更しない)
   
   ```
-  python3 hero.py
+  python3 hello.py
   ```
 
 
@@ -13,9 +13,9 @@ pythonのプログラムを動かすためのコマンド
 
 
   ```
-  $ cat hero.py
+  $ cat hello.py
   print("Hello World")
-  $ python3 hero.py
+  $ python3 hello.py
   Hello World
   ```
 
@@ -61,7 +61,7 @@ pythonのプログラムを動かすためのコマンド
   実行例　[](変更しない)
   
   ```
-  python3 -i hero.py 
+  python3 -i hello.py 
   ```
 
 
@@ -69,15 +69,15 @@ pythonのプログラムを動かすためのコマンド
 
 
   ```
-  $ cat hero.py
+  $ cat hello.py
   print("Hello World")
-  $ python3 -i hero.py 
+  $ python3 -i hello.py 
   Hello World
   >>>
   対話モードに入ると「>>>」が表示されるようになり、
   ここから入力ができる。
 
-  $ python3 -i hero.py 
+  $ python3 -i hello.py 
   Hello World
   >>> 2 + 3                // 2+3の計算
   5
