@@ -1,9 +1,8 @@
 [](ファイル名はコマンド名.md)
 # python3
-python [ -B ] [ -b ] [ -d ] [ -E ] [ -h ] [ -i ] [ -I ]
-[ -m モジュール名 ] [ -q ] [ -O ] [ -OO ] [ -s ] [ -S ] [ -u
-]
-[ -v ] [ -V ] [ -W 引数 ] [ -x ] [ -X オプション ] [ -? ]
+python [ -B ] [ -i ]
+[ -m モジュール名 ] [ -O ] [ -s ] 
+[ -v ] 
 [ --check-hash-based-pycs default | always | never ]
 [ -c コマンド | スクリプト | - ] [ 引数 ]
 
@@ -55,9 +54,6 @@ COMMAND LINE OPTIONS
         実行可能ファイルの Python バージョン番号と終了メッセージを表示します。2回指定すると、ビルドに関する詳細情報も表示されます。
 <br>
 
-
-
-
   実行例 [](変更しない)
   
   ```
@@ -86,7 +82,6 @@ COMMAND LINE OPTIONS
   
   ```
   python3 -c "result = 2 + 3; print(result)"
-  
   ```
 
 
