@@ -18,7 +18,6 @@ e2scrub を実行する前にスナップショットを削除するようにし
   実行結果　[](変更しない)
 
 
-
   ```
   端末
   Reducing COW size 256.00 MiB down to maximum usable size 16.00 MiB.
