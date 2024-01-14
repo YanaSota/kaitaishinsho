@@ -322,93 +322,93 @@ AppArmor(Linuxのセキュリティプロファイルを結びつけることで
 
   ```
   {
-        "version":      "2",
-        "profiles":     {
-                "/snap/snapd/19993/usr/lib/snapd/snap-confine": "enforce",
-                "/snap/snapd/19993/usr/lib/snapd/snap-confine//mount-namespace-capture-helper": "enforce",
-                "/snap/snapd/20092/usr/lib/snapd/snap-confine": "enforce",
-                "/snap/snapd/20092/usr/lib/snapd/snap-confine//mount-namespace-capture-helper": "enforce",
-                "/snap/snapd/20290/usr/lib/snapd/snap-confine": "enforce",
-                "/snap/snapd/20290/usr/lib/snapd/snap-confine//mount-namespace-capture-helper": "enforce",
-                "/usr/bin/evince":      "enforce",
-                "/usr/bin/evince-previewer":    "enforce",
-                "/usr/bin/evince-previewer//sanitized_helper":  "enforce",
-                "/usr/bin/evince-thumbnailer":  "enforce",
-                "/usr/bin/evince//sanitized_helper":    "enforce",
-                "/usr/bin/man": "enforce",
-                "/usr/lib/NetworkManager/nm-dhcp-client.action":        "enforce",
-                "/usr/lib/NetworkManager/nm-dhcp-helper":       "enforce",
-                "/usr/lib/connman/scripts/dhclient-script":     "enforce",
-                "/usr/lib/cups/backend/cups-pdf":       "enforce",
-                "/usr/lib/snapd/snap-confine":  "enforce",
-                "/usr/lib/snapd/snap-confine//mount-namespace-capture-helper":  "enforce",
-                "/usr/sbin/cups-browsed":       "enforce",
-                "/usr/sbin/cupsd":      "enforce",
-                "/usr/sbin/cupsd//third_party": "enforce",
-                "/{,usr/}sbin/dhclient":        "enforce",
-                "docker-default":       "enforce",
-                "libreoffice-senddoc":  "enforce",
-                "libreoffice-soffice//gpg":     "enforce",
-                "libreoffice-xpdfimport":       "enforce",
-                "lsb_release":  "enforce",
-                "man_filter":   "enforce",
-                "man_groff":    "enforce",
-                "nvidia_modprobe":      "enforce",
-                "nvidia_modprobe//kmod":        "enforce",
-                "snap-update-ns.firefox":       "enforce",
-                "snap-update-ns.snap-store":    "enforce",
-                "snap-update-ns.snapd-desktop-integration":     "enforce",
-                "snap.firefox.firefox": "enforce",
-                "snap.firefox.geckodriver":     "enforce",
-                "snap.firefox.hook.configure":  "enforce",
-                "snap.firefox.hook.connect-plug-host-hunspell": "enforce",
-                "snap.firefox.hook.disconnect-plug-host-hunspell":      "enforce",
-                "snap.firefox.hook.post-refresh":       "enforce",
-                "snap.snap-store.hook.configure":       "enforce",
-                "snap.snap-store.snap-store":   "enforce",
-                "snap.snap-store.ubuntu-software":      "enforce",
-                "snap.snap-store.ubuntu-software-local-file":   "enforce",
-                "snap.snapd-desktop-integration.hook.configure":        "enforce",
-                "snap.snapd-desktop-integration.snapd-desktop-integration":     "enforce",
-                "tcpdump":      "enforce",
-                "libreoffice-oosplash": "complain",
-                "libreoffice-soffice":  "complain"
-        },
-        "processes":    {
-                "/bin/snap-store":      [{
-                                "profile":      "snap.snap-store.ubuntu-software",
-                                "pid":  "1413",
-                                "status":       "enforce"
-                        }],
-                "/bin/snapd-desktop-integration":       [{
-                                "profile":      "snap.snapd-desktop-integration.snapd-desktop-integration",
-                                "pid":  "872",
-                                "status":       "enforce"
-                        }, {
-                                "profile":      "snap.snapd-desktop-integration.snapd-desktop-integration",
-                                "pid":  "1216",
-                                "status":       "enforce"
-                        }],
-                "/usr/bin/less":        [{
-                                "profile":      "/usr/bin/man",
-                                "pid":  "94000",
-                                "status":       "enforce"
-                        }],
-                "/usr/bin/man": [{
-                                "profile":      "/usr/bin/man",
-                                "pid":  "93992",
-                                "status":       "enforce"
-                        }],
-                "/usr/sbin/cups-browsed":       [{
-                                "profile":      "/usr/sbin/cups-browsed",
-                                "pid":  "94258",
-                                "status":       "enforce"
-                        }],
-                "/usr/sbin/cupsd":      [{
-                                "profile":      "/usr/sbin/cupsd",
-                                "pid":  "94221",
-                                "status":       "enforce"
-                        }]
-        }
-}
+          "version":      "2",
+          "profiles":     {
+                  "/snap/snapd/19993/usr/lib/snapd/snap-confine": "enforce",
+                  "/snap/snapd/19993/usr/lib/snapd/snap-confine//mount-namespace-capture-helper": "enforce",
+                  "/snap/snapd/20092/usr/lib/snapd/snap-confine": "enforce",
+                  "/snap/snapd/20092/usr/lib/snapd/snap-confine//mount-namespace-capture-helper": "enforce",
+                  "/snap/snapd/20290/usr/lib/snapd/snap-confine": "enforce",
+                  "/snap/snapd/20290/usr/lib/snapd/snap-confine//mount-namespace-capture-helper": "enforce",
+                  "/usr/bin/evince":      "enforce",
+                  "/usr/bin/evince-previewer":    "enforce",
+                  "/usr/bin/evince-previewer//sanitized_helper":  "enforce",
+                  "/usr/bin/evince-thumbnailer":  "enforce",
+                  "/usr/bin/evince//sanitized_helper":    "enforce",
+                  "/usr/bin/man": "enforce",
+                  "/usr/lib/NetworkManager/nm-dhcp-client.action":        "enforce",
+                  "/usr/lib/NetworkManager/nm-dhcp-helper":       "enforce",
+                  "/usr/lib/connman/scripts/dhclient-script":     "enforce",
+                  "/usr/lib/cups/backend/cups-pdf":       "enforce",
+                  "/usr/lib/snapd/snap-confine":  "enforce",
+                  "/usr/lib/snapd/snap-confine//mount-namespace-capture-helper":  "enforce",
+                  "/usr/sbin/cups-browsed":       "enforce",
+                  "/usr/sbin/cupsd":      "enforce",
+                  "/usr/sbin/cupsd//third_party": "enforce",
+                  "/{,usr/}sbin/dhclient":        "enforce",
+                  "docker-default":       "enforce",
+                  "libreoffice-senddoc":  "enforce",
+                  "libreoffice-soffice//gpg":     "enforce",
+                  "libreoffice-xpdfimport":       "enforce",
+                  "lsb_release":  "enforce",
+                  "man_filter":   "enforce",
+                  "man_groff":    "enforce",
+                  "nvidia_modprobe":      "enforce",
+                  "nvidia_modprobe//kmod":        "enforce",
+                  "snap-update-ns.firefox":       "enforce",
+                  "snap-update-ns.snap-store":    "enforce",
+                  "snap-update-ns.snapd-desktop-integration":     "enforce",
+                  "snap.firefox.firefox": "enforce",
+                  "snap.firefox.geckodriver":     "enforce",
+                  "snap.firefox.hook.configure":  "enforce",
+                  "snap.firefox.hook.connect-plug-host-hunspell": "enforce",
+                  "snap.firefox.hook.disconnect-plug-host-hunspell":      "enforce",
+                  "snap.firefox.hook.post-refresh":       "enforce",
+                  "snap.snap-store.hook.configure":       "enforce",
+                  "snap.snap-store.snap-store":   "enforce",
+                  "snap.snap-store.ubuntu-software":      "enforce",
+                  "snap.snap-store.ubuntu-software-local-file":   "enforce",
+                  "snap.snapd-desktop-integration.hook.configure":        "enforce",
+                  "snap.snapd-desktop-integration.snapd-desktop-integration":     "enforce",
+                  "tcpdump":      "enforce",
+                  "libreoffice-oosplash": "complain",
+                  "libreoffice-soffice":  "complain"
+          },
+          "processes":    {
+                  "/bin/snap-store":      [{
+                                  "profile":      "snap.snap-store.ubuntu-software",
+                                  "pid":  "1413",
+                                  "status":       "enforce"
+                          }],
+                  "/bin/snapd-desktop-integration":       [{
+                                  "profile":      "snap.snapd-desktop-integration.snapd-desktop-integration",
+                                  "pid":  "872",
+                                  "status":       "enforce"
+                          }, {
+                                  "profile":      "snap.snapd-desktop-integration.snapd-desktop-integration",
+                                  "pid":  "1216",
+                                  "status":       "enforce"
+                          }],
+                  "/usr/bin/less":        [{
+                                  "profile":      "/usr/bin/man",
+                                  "pid":  "94000",
+                                  "status":       "enforce"
+                          }],
+                  "/usr/bin/man": [{
+                                  "profile":      "/usr/bin/man",
+                                  "pid":  "93992",
+                                  "status":       "enforce"
+                          }],
+                  "/usr/sbin/cups-browsed":       [{
+                                  "profile":      "/usr/sbin/cups-browsed",
+                                  "pid":  "94258",
+                                  "status":       "enforce"
+                          }],
+                  "/usr/sbin/cupsd":      [{
+                                  "profile":      "/usr/sbin/cupsd",
+                                  "pid":  "94221",
+                                  "status":       "enforce"
+                          }]
+          }
+  }
   ```
