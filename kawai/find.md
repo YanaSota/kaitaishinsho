@@ -109,7 +109,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/ -size 10c
+  find /home/user/ -size 10c
   ```
 
 
@@ -117,9 +117,9 @@
 
 
   ```
-  /home/kawai/snap/firefox/common/.mozilla/firefox/Crash Reports/InstallTime20230512012512
-  /home/kawai/snap/firefox/common/.mozilla/firefox/Crash Reports/InstallTime20230414190624
-  /home/kawai/snap/firefox/common/.mozilla/firefox/Crash Reports/InstallTime20230710222611
+  /home/user/snap/firefox/common/.mozilla/firefox/Crash Reports/InstallTime20230512012512
+  /home/user/snap/firefox/common/.mozilla/firefox/Crash Reports/InstallTime20230414190624
+  /home/user/snap/firefox/common/.mozilla/firefox/Crash Reports/InstallTime20230710222611
   ~略~
   ```
 - **-newer** 
@@ -129,7 +129,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/ -newer a.txt
+  find /home/user/ -newer a.txt
   ```
 
 
@@ -137,9 +137,9 @@
 
 
   ```
-  /home/kawai/
-  /home/kawai/A.txt
-  /home/kawai/.cache/tracker3/files
+  /home/user/
+  /home/user/A.txt
+  /home/user/.cache/tracker3/files
   ~略~
   ```
 - **-anewer** 
@@ -149,7 +149,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/ -anewer a.txt
+  find /home/user/ -anewer a.txt
   ```
 
 
@@ -157,9 +157,9 @@
 
 
   ```
-  /home/kawai/
-  /home/kawai/A.txt
-  /home/kawai/a.txt
+  /home/user/
+  /home/user/A.txt
+  /home/user/a.txt
   ~略~
   ```
 - **-cnewer** 
@@ -169,7 +169,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/ -cnewer a.txt
+  find /home/user/ -cnewer a.txt
   ```
 
 
@@ -177,19 +177,19 @@
 
 
   ```
-  /home/kawai/
-  /home/kawai/test
-  /home/kawai/test/t.txt
+  /home/user/
+  /home/user/test
+  /home/user/test/t.txt
   ~略~
   ```
 - **-maxdepth** 
     
-  指定されたパスから最大何段階下のディレクトリまで探索するかを指定する。実行例では、/home/kawai/test/test1というディレクトリ構造になっており、testディレクトリにt.txt、test1ディレクトリにT.txtというファイルを配置したマシンを想定し、引数を変えて実行した。
+  指定されたパスから最大何段階下のディレクトリまで探索するかを指定する。実行例では、/home/user/test/test1というディレクトリ構造になっており、testディレクトリにt.txt、test1ディレクトリにT.txtというファイルを配置したマシンを想定し、引数を変えて実行した。
   
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/ -maxdepth 2 -iname t.txt
+  find /home/user/ -maxdepth 2 -iname t.txt
   ```
 
 
@@ -197,13 +197,13 @@
 
 
   ```
-  /home/kawai/test/t.txt
+  /home/user/test/t.txt
   ```
 
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/ -maxdepth 3 -iname t.txt
+  find /home/user/ -maxdepth 3 -iname t.txt
   ```
 
 
@@ -211,17 +211,17 @@
 
 
   ```
-  /home/kawai/test/t.txt
-  /home/kawai/test/test1/T.txt
+  /home/user/test/t.txt
+  /home/user/test/test1/T.txt
   ```
 - **-mindepth** 
     
-  指定されたパスから少なくとも何段階下のディレクトリまで探索しないかを指定する。実行例では、/home/kawai/test/test1というディレクトリ構造になっており、testディレクトリにt.txt、test1ディレクトリにT.txtというファイルを配置したマシンを想定し、引数を変えて実行した。
+  指定されたパスから少なくとも何段階下のディレクトリまで探索しないかを指定する。実行例では、/home/user/test/test1というディレクトリ構造になっており、testディレクトリにt.txt、test1ディレクトリにT.txtというファイルを配置したマシンを想定し、引数を変えて実行した。
   
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/ -mindepth 3 -iname t.txt
+  find /home/user/ -mindepth 3 -iname t.txt
   ```
 
 
@@ -229,13 +229,13 @@
 
 
   ```
-  /home/kawai/test/test1/T.txt
+  /home/user/test/test1/T.txt
   ```
 
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/ -mindepth 2 -iname t.txt
+  find /home/user/ -mindepth 2 -iname t.txt
   ```
 
 
@@ -243,8 +243,8 @@
 
 
   ```
-  /home/kawai/test/t.txt
-  /home/kawai/test/test1/T.txt
+  /home/user/test/t.txt
+  /home/user/test/test1/T.txt
   ```
 - **-daystart** 
     
@@ -253,7 +253,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/ -daystart -ctime -1
+  find /home/user/ -daystart -ctime -1
   ```
 
 
@@ -261,9 +261,9 @@
 
 
   ```
-  /home/kawai/
-  /home/kawai/test
-  /home/kawai/test/t.txt
+  /home/user/
+  /home/user/test
+  /home/user/test/t.txt
   ~略~
   ```
 - **-mtime** 
@@ -273,7 +273,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/ -mtime 0
+  find /home/user/ -mtime 0
   ```
 
 
@@ -282,9 +282,9 @@
 
   ```
   ~略~
-  /home/kawai/.cache/tracker3/files/meta.db-wal
-  /home/kawai/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Documents.db-shm
-  /home/kawai/.cache/update-manager-core/meta-release-lts
+  /home/user/.cache/tracker3/files/meta.db-wal
+  /home/user/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Documents.db-shm
+  /home/user/.cache/update-manager-core/meta-release-lts
   ```
 - **-mmin** 
     
@@ -293,7 +293,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/ -mmin -30
+  find /home/user/ -mmin -30
   ```
 
 
@@ -302,9 +302,9 @@
 
   ```
   ~略~
-  /home/kawai/.cache/tracker3/files/last-crawl.txt
-  /home/kawai/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23FileSystem.db-wal
-  /home/kawai/.cache/tracker3/files/meta.db-wal
+  /home/user/.cache/tracker3/files/last-crawl.txt
+  /home/user/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23FileSystem.db-wal
+  /home/user/.cache/tracker3/files/meta.db-wal
   ```
 - **-atime** 
     
@@ -313,7 +313,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/ -atime 0
+  find /home/user/ -atime 0
   ```
 
 
@@ -322,9 +322,9 @@
 
   ```
   ~略~
-  /home/kawai/project/upload
-  /home/kawai/.profile
-  /home/kawai/.vnc
+  /home/user/project/upload
+  /home/user/.profile
+  /home/user/.vnc
   ```
 - **-amin** 
     
@@ -333,7 +333,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/ -amin -30
+  find /home/user/ -amin -30
   ```
 
 
@@ -342,9 +342,9 @@
 
   ```
   ~略~
-  /home/kawai/.cache/tracker3/files/last-crawl.txt
-  /home/kawai/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23FileSystem.db-wal
-  /home/kawai/.cache/tracker3/files/meta.db-wal
+  /home/user/.cache/tracker3/files/last-crawl.txt
+  /home/user/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23FileSystem.db-wal
+  /home/user/.cache/tracker3/files/meta.db-wal
   ```
 - **-ctime** 
     
@@ -353,7 +353,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/ -ctime 0
+  find /home/user/ -ctime 0
   ```
 
 
@@ -362,9 +362,9 @@
 
   ```
   ~略~
-  /home/kawai/.cache/tracker3/files/meta.db-wal
-  /home/kawai/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Documents.db-shm
-  /home/kawai/.cache/update-manager-core/meta-release-lts
+  /home/user/.cache/tracker3/files/meta.db-wal
+  /home/user/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Documents.db-shm
+  /home/user/.cache/update-manager-core/meta-release-lts
   ```
 - **-cmin** 
     
@@ -373,7 +373,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/ -cmin -30
+  find /home/user/ -cmin -30
   ```
 
 
@@ -382,9 +382,9 @@
 
   ```
   ~略~
-  /home/kawai/.cache/tracker3/files/last-crawl.txt
-  /home/kawai/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23FileSystem.db-wal
-  /home/kawai/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Documents.db-shm
+  /home/user/.cache/tracker3/files/last-crawl.txt
+  /home/user/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23FileSystem.db-wal
+  /home/user/.cache/tracker3/files/http%3A%2F%2Ftracker.api.gnome.org%2Fontology%2Fv3%2Ftracker%23Documents.db-shm
   ```
 - **-empty** 
     
@@ -393,7 +393,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/ -empty
+  find /home/user/ -empty
   ```
 
 
@@ -401,9 +401,9 @@
 
 
   ```
-  /home/kawai/.cache/sessions
-  /home/kawai/.cache/motd.legal-displayed
-  /home/kawai/project/upload
+  /home/user/.cache/sessions
+  /home/user/.cache/motd.legal-displayed
+  /home/user/project/upload
   ~略~
   ```
 - **-regex** 
@@ -413,7 +413,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/ -regex .*t2.txt
+  find /home/user/ -regex .*t2.txt
   ```
 
 
@@ -422,9 +422,9 @@
 
   ```
   ~略~
-  /home/kawai/ダウンロード/go1.20.2.linux-amd64/go/src/go/doc/comment/testdata/text2.txt
-  /home/kawai/ダウンロード/go1.20.2.linux-amd64/go/src/go/doc/comment/testdata/list2.txt
-  /home/kawai/output2.txt
+  /home/user/ダウンロード/go1.20.2.linux-amd64/go/src/go/doc/comment/testdata/text2.txt
+  /home/user/ダウンロード/go1.20.2.linux-amd64/go/src/go/doc/comment/testdata/list2.txt
+  /home/user/output2.txt
   ```
 - **-iregex** 
     
@@ -433,7 +433,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/ -iregex .*T2.txt
+  find /home/user/ -iregex .*T2.txt
   ```
 
 
@@ -442,9 +442,9 @@
 
   ```
   ~略~
-  /home/kawai/ダウンロード/go1.20.2.linux-amd64/go/src/go/doc/comment/testdata/text2.txt
-  /home/kawai/ダウンロード/go1.20.2.linux-amd64/go/src/go/doc/comment/testdata/list2.txt
-  /home/kawai/output2.txt
+  /home/user/ダウンロード/go1.20.2.linux-amd64/go/src/go/doc/comment/testdata/text2.txt
+  /home/user/ダウンロード/go1.20.2.linux-amd64/go/src/go/doc/comment/testdata/list2.txt
+  /home/user/output2.txt
   ```
 - **-perm** 
     
@@ -453,7 +453,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/test/ -maxdepth 1 -perm 777
+  find /home/user/test/ -maxdepth 1 -perm 777
   ```
 
 
@@ -461,13 +461,13 @@
 
 
   ```
-  /home/kawai/test/t1.txt
+  /home/user/test/t1.txt
   ```
   
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/test/ -maxdepth 1 -perm -707
+  find /home/user/test/ -maxdepth 1 -perm -707
   ```
 
 
@@ -475,13 +475,13 @@
 
 
   ```
-  /home/kawai/test/t1.txt
+  /home/user/test/t1.txt
   ```
 
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/test/ -maxdepth 1 -perm /706
+  find /home/user/test/ -maxdepth 1 -perm /706
   ```
 
 
@@ -489,9 +489,9 @@
 
 
   ```
-  /home/kawai/test/t.txt
-  /home/kawai/test/t1.txt
-  /home/kawai/test/test1
+  /home/user/test/t.txt
+  /home/user/test/t1.txt
+  /home/user/test/test1
   ```
   
 - **-user** 
@@ -501,7 +501,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/ -user root
+  find /home/user/ -user root
   ```
 
 
@@ -510,9 +510,9 @@
 
   ```
   ~略~
-  /home/kawai/project/docker/Dockerfile
-  /home/kawai/project/upload_and_run.py
-  /home/kawai/project/index.html
+  /home/user/project/docker/Dockerfile
+  /home/user/project/upload_and_run.py
+  /home/user/project/index.html
   ```
 - **-uid** 
     
@@ -521,7 +521,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/ -uid 0
+  find /home/user/ -uid 0
   ```
 
 
@@ -530,9 +530,9 @@
 
   ```
   ~略~
-  /home/kawai/project/docker/Dockerfile
-  /home/kawai/project/upload_and_run.py
-  /home/kawai/project/index.html
+  /home/user/project/docker/Dockerfile
+  /home/user/project/upload_and_run.py
+  /home/user/project/index.html
   ```
 - **-group** 
     
@@ -541,7 +541,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/ -group root
+  find /home/user/ -group root
   ```
 
 
@@ -550,9 +550,9 @@
 
   ```
   ~略~
-  /home/kawai/project/docker/Dockerfile
-  /home/kawai/project/upload_and_run.py
-  /home/kawai/project/index.html
+  /home/user/project/docker/Dockerfile
+  /home/user/project/upload_and_run.py
+  /home/user/project/index.html
   ```
 - **-gid** 
     
@@ -561,7 +561,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/ -group 0
+  find /home/user/ -group 0
   ```
 
 
@@ -570,9 +570,9 @@
 
   ```
   ~略~
-  /home/kawai/project/docker/Dockerfile
-  /home/kawai/project/upload_and_run.py
-  /home/kawai/project/index.html
+  /home/user/project/docker/Dockerfile
+  /home/user/project/upload_and_run.py
+  /home/user/project/index.html
   ```
 - **-delete** 
     
@@ -581,7 +581,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/test/ -maxdepth 1 -perm 777 -delete
+  find /home/user/test/ -maxdepth 1 -perm 777 -delete
   ```
 
 
@@ -590,17 +590,17 @@
 
   ```
   実行前
-  drwxrwxr-x  3 kawai kawai 4096  1月 30 04:11 .
-  drwxr-x--- 29 kawai kawai 4096  1月 30 02:28 ..
-  -rw-rw-rw-  1 kawai kawai    0  1月 30 02:28 t.txt
-  drwxrwxr-x  2 kawai kawai 4096  1月 30 02:29 test1
+  drwxrwxr-x  3 user user 4096  1月 30 04:11 .
+  drwxr-x--- 29 user user 4096  1月 30 02:28 ..
+  -rw-rw-rw-  1 user user    0  1月 30 02:28 t.txt
+  drwxrwxr-x  2 user user 4096  1月 30 02:29 test1
   -rwxrwxrwx  1 root  root     0  1月 30 04:11 test1.txt
 
   実行後
-  drwxrwxr-x  3 kawai kawai 4096  1月 30 04:12 .
-  drwxr-x--- 29 kawai kawai 4096  1月 30 02:28 ..
-  -rw-rw-rw-  1 kawai kawai    0  1月 30 02:28 t.txt
-  drwxrwxr-x  2 kawai kawai 4096  1月 30 02:29 test1
+  drwxrwxr-x  3 user user 4096  1月 30 04:12 .
+  drwxr-x--- 29 user user 4096  1月 30 02:28 ..
+  -rw-rw-rw-  1 user user    0  1月 30 02:28 t.txt
+  drwxrwxr-x  2 user user 4096  1月 30 02:29 test1
   ```
 - **-exec** 
     
@@ -609,7 +609,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/test/ -perm 777 -exec sudo chmod 666 {} \;
+  find /home/user/test/ -perm 777 -exec sudo chmod 666 {} \;
   ```
 
 
@@ -618,19 +618,19 @@
 
   ```
   実行前
-  drwxrwxr-x  3 kawai kawai 4096  1月 30 04:23 .
-  drwxr-x--- 29 kawai kawai 4096  1月 30 04:21 ..
-  -rwxrwxrwx  1 kawai kawai    0  1月 30 02:28 t.txt
+  drwxrwxr-x  3 user user 4096  1月 30 04:23 .
+  drwxr-x--- 29 user user 4096  1月 30 04:21 ..
+  -rwxrwxrwx  1 user user    0  1月 30 02:28 t.txt
   -rwxrwxrwx  1 root  root    15  1月 30 04:14 test.py
-  drwxrwxr-x  2 kawai kawai 4096  1月 30 02:29 test1
+  drwxrwxr-x  2 user user 4096  1月 30 02:29 test1
   -rwxrwxrwx  1 root  root    22  1月 30 04:23 test1.py
 
   実行後
-  drwxrwxr-x  3 kawai kawai 4096  1月 30 04:23 .
-  drwxr-x--- 29 kawai kawai 4096  1月 30 04:21 ..
-  -rw-rw-rw-  1 kawai kawai    0  1月 30 02:28 t.txt
+  drwxrwxr-x  3 user user 4096  1月 30 04:23 .
+  drwxr-x--- 29 user user 4096  1月 30 04:21 ..
+  -rw-rw-rw-  1 user user    0  1月 30 02:28 t.txt
   -rw-rw-rw-  1 root  root    15  1月 30 04:14 test.py
-  drwxrwxr-x  2 kawai kawai 4096  1月 30 02:29 test1
+  drwxrwxr-x  2 user user 4096  1月 30 02:29 test1
   -rw-rw-rw-  1 root  root    22  1月 30 04:23 test1.py
   ```
 - **-ok** 
@@ -640,7 +640,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/test/ -regex .*.py -ok python3 {} \;
+  find /home/user/test/ -regex .*.py -ok python3 {} \;
   ```
 
 
@@ -648,9 +648,9 @@
 
 
   ```
-  < python3 ... /home/kawai/test/test.py > ? yes
+  < python3 ... /home/user/test/test.py > ? yes
   hello
-  < python3 ... /home/kawai/test/test1.py > ? yes
+  < python3 ... /home/user/test/test1.py > ? yes
   good morning
   ```
 - **-print** 
@@ -660,7 +660,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/test/ -regex .*.py -print
+  find /home/user/test/ -regex .*.py -print
   ```
 
 
@@ -668,8 +668,8 @@
 
 
   ```
-  /home/kawai/test/test.py
-  /home/kawai/test/test1.py
+  /home/user/test/test.py
+  /home/user/test/test1.py
   ```
 - **-print0** 
     
@@ -678,7 +678,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/test/ -regex .*.py -print0
+  find /home/user/test/ -regex .*.py -print0
   ```
 
 
@@ -686,7 +686,7 @@
 
 
   ```
-  /home/kawai/test/test.py/home/kawai/test/test1.py
+  /home/user/test/test.py/home/user/test/test1.py
   ```
 - **-fprint** 
     
@@ -695,7 +695,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/test/ -regex .*.py -fprint output.txt
+  find /home/user/test/ -regex .*.py -fprint output.txt
   ```
 
 
@@ -703,8 +703,8 @@
 
 
   ```
-  /home/kawai/test/test.py
-  /home/kawai/test/test1.py
+  /home/user/test/test.py
+  /home/user/test/test1.py
   ```
 - **-fprint0** 
     
@@ -713,7 +713,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/test/ -regex .*.py -fprint0 output1.txt
+  find /home/user/test/ -regex .*.py -fprint0 output1.txt
   ```
 
 
@@ -721,7 +721,7 @@
 
 
   ```
-  /home/kawai/test/test.py^@/home/kawai/test/test1.py^@
+  /home/user/test/test.py^@/home/user/test/test1.py^@
   ```
 - **-a,-and** 
     
@@ -730,7 +730,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/test/ -regex .*.txt -and -perm 666
+  find /home/user/test/ -regex .*.txt -and -perm 666
   ```
 
 
@@ -738,7 +738,7 @@
 
 
   ```
-  /home/kawai/test/t.txt
+  /home/user/test/t.txt
   ```
 - **-o,-or** 
     
@@ -747,7 +747,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/test/ -regex .*.txt -or -perm 666
+  find /home/user/test/ -regex .*.txt -or -perm 666
   ```
 
 
@@ -755,12 +755,12 @@
 
 
   ```
-  /home/kawai/test/test.py
-  /home/kawai/test/output1.txt
-  /home/kawai/test/t.txt
-  /home/kawai/test/output.txt
-  /home/kawai/test/test1/T.txt
-  /home/kawai/test/test1.py
+  /home/user/test/test.py
+  /home/user/test/output1.txt
+  /home/user/test/t.txt
+  /home/user/test/output.txt
+  /home/user/test/test1/T.txt
+  /home/user/test/test1.py
   ```
 - **-not** 
     
@@ -769,7 +769,7 @@
   実行例　[](変更しない)
   
   ```
-  find /home/kawai/test/ -not -type f
+  find /home/user/test/ -not -type f
   ```
 
 
@@ -777,6 +777,6 @@
 
 
   ```
-  /home/kawai/test/
-  /home/kawai/test/test1
+  /home/user/test/
+  /home/user/test/test1
   ```
