@@ -1,4 +1,4 @@
-grub-mkrelpath
+○ grub-mkrelpath
 grub-mkrescue
 grub-mkstandalone
 grub-mount
@@ -9,22 +9,22 @@ grub-render-label
 grub-script-check
 grub-set-default
 grub-syslinux2cfg
-gs
-gsbj
-gsdj
-gsdj500
-gsettings
-gslj
-gslp
-gsnd
-gst-device-monitor-1.0
-gst-discoverer-1.0
-gst-inspect-1.0
-gst-launch-1.0
-gst-play-1.0
+○ gs
+○ gsbj
+○ gsdj
+○ gsdj500
+○ gsettings
+○ gslj
+○ gslp
+○ gsnd
+○ gst-device-monitor-1.0
+○ gst-discoverer-1.0
+○ gst-inspect-1.0
+○ gst-launch-1.0
+○ gst-play-1.0
 gst-stats-1.0
 gst-tester-1.0
-gst-typefind-1.0
+○ gst-typefind-1.0
 gstreamer-codec-install
 gtbl
 gtf
@@ -38,9 +38,9 @@ gtk4-encode-symbolic-svg
 gtk4-launch
 gtk4-query-settings
 gtk4-update-icon-cache
-gunzip
+○ gunzip
 gzexe
-gzip
+○ gzip
 h2ph
 h2xs
 halt
