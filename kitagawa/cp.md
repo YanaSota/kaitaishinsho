@@ -32,7 +32,7 @@
   実行例 [](変更しない)
   
   ```
-  $ cp -f -v test.txt test2.txt
+  $ cp -f test.txt test2.txt
   ```
 
 
@@ -41,7 +41,7 @@
   実行結果に変化は無い
 
   ```
-  'test.txt' -> 'test2.txt'
+  デフォルトだと実行結果の表示は無い
   ```
 
 
@@ -53,15 +53,16 @@
   実行例 [](変更しない)
   
   ```
-  $ cp -v -i test.txt test2.txt
+  $ cp -i test.txt test2.txt
   ```
 
 
   実行結果　[](変更しない)
 
+  上書きを行うかの確認が入る。
+
   ```
   cp: overwrite '/home/admin/test2/test2'? yes
-  'test' -> '/home/admin/test2/test2'
   ```
 
 
