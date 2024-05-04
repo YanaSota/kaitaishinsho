@@ -111,6 +111,7 @@
     <INPUT TYPE=submit > 
   </FORM>
   ```
+  この例ではMETHODをPOSTで指定し、ACTIONで指定されたURLにINPUTのtext値を変数"username"に格納して送信している。
 
 
   実行結果　[](変更しない)
